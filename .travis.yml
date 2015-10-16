@@ -19,3 +19,5 @@ script:
 - python2 -V || true
 - which python3 || true
 - python3 -V || true
+- which cmake
+- cmake --version
