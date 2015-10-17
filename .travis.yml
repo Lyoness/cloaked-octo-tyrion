@@ -1,5 +1,11 @@
 language: python
 
+python:
+- 2.6
+- 2.7
+- 3.4
+- 3.5
+
 sudo: required
 
 dist: trusty
@@ -11,7 +17,6 @@ install: echo install whatever
 script:
 - which pyenv || true
 - pyenv versions
-- 'echo $PATH | tr ":" "\n"'
 - which python || true
 - python -V || true
 - which python2 || true
