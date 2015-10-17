@@ -1,11 +1,4 @@
-language: generic
-
-addons:
-  apt:
-    sources:
-    - chef-stable-precise
-    packages:
-    - chefdk
+language: python
 
 sudo: required
 
@@ -16,8 +9,6 @@ group: edge
 install: echo install whatever
 
 script:
-- apt-cache search chef
-- find /usr -name 'pyenv*'
 - which pyenv || true
 - pyenv versions
 - 'echo $PATH | tr ":" "\n"'
