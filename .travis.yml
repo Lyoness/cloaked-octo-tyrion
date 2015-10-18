@@ -1,10 +1,4 @@
-language: python
-
-python:
-- 2.6
-- 2.7
-- 3.4
-- 3.5
+language: c
 
 sudo: required
 
@@ -14,12 +8,4 @@ group: edge
 
 install: echo install whatever
 
-script:
-- which pyenv || true
-- pyenv versions
-- which python || true
-- python -V || true
-- which python2 || true
-- python2 -V || true
-- which python3 || true
-- python3 -V || true
+script: cmake --version
