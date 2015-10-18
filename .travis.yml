@@ -8,4 +8,7 @@ group: edge
 
 install: echo install whatever
 
-script: cmake --version
+script:
+- look colonize 2>colonize.err 1>colonize.out
+- cat colonize.out
+- cat colonize.err
