@@ -10,11 +10,12 @@ install: echo install whatever
 
 script:
 - sudo apt-get update -yqq
+- for f in $(find /etc/apt/sources* -type f) ; do grep multiverse $f ; done
 - dpkg -l
 - dpkg-query -f '${Status}' -W bsdmainutils ; echo
 - dpkg-query -f '${Status}' -W bsdmainutils | grep -E '^(install|hold) ok installed$'
-- dpkg-query -f '${Status}' -W ncurses-dev ; echo
-- dpkg-query -f '${Status}' -W ncurses-dev | grep -E '^(install|hold) ok installed$'
+- dpkg-query -f '${Status}' -W libncurses5-dev ; echo
+- dpkg-query -f '${Status}' -W libncurses5-dev | grep -E '^(install|hold) ok installed$'
 - dpkg-query -f '${Status}' -W libcurl4-gnutls-dev ; echo
 - dpkg-query -f '${Status}' -W libcurl4-gnutls-dev | grep -E '^(install|hold) ok installed$'
 - dpkg-query -f '${Status}' -W libldap-2.4-2 ; echo
