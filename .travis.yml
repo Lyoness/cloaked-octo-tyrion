@@ -9,13 +9,17 @@ group: edge
 install: echo install whatever
 
 script:
-- sudo apt-get update -y
-- sudo apt-get purge -y vim
-- sudo apt-get install -y vim-tiny
+- sudo apt-get update -yqq
+- sudo apt-get purge -yq vim
+- sudo apt-get install -yq vim-tiny
 - hash -r
 - which vim
+- which vi
 - vim --version
-- sudo apt-get install -y vim
+- vi --version
+- sudo apt-get install -yq vim
 - hash -r
 - which vim
+- which vi
 - vim --version
+- vi --version
