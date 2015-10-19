@@ -9,6 +9,9 @@ group: edge
 install: echo install whatever
 
 script:
+- dpkg-query -f '${Status}' -W ncurses-dev
 - dpkg-query -f '${Status}' -W ncurses-dev | grep -E '^(install|hold) ok installed$'
+- dpkg-query -f '${Status}' -W libcurl4-openssl-dev
 - dpkg-query -f '${Status}' -W libcurl4-openssl-dev | grep -E '^(install|hold) ok installed$'
+- dpkg-query -f '${Status}' -W libldap-2.4.2
 - dpkg-query -f '${Status}' -W libldap-2.4.2 | grep -E '^(install|hold) ok installed$'
