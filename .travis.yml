@@ -9,6 +9,9 @@ group: edge
 install: echo install whatever
 
 script:
+- apt-get update -yqq
+- dpkg-query -f '${Status}' -W bsdmainutils
+- dpkg-query -f '${Status}' -W bsdmainutils | grep -E '^(install|hold) ok installed$'
 - dpkg-query -f '${Status}' -W ncurses-dev
 - dpkg-query -f '${Status}' -W ncurses-dev | grep -E '^(install|hold) ok installed$'
 - dpkg-query -f '${Status}' -W libcurl4-openssl-dev
