@@ -10,11 +10,11 @@ install: echo install whatever
 
 script:
 - sudo apt-get update -yqq
-- dpkg-query -f '${Status}\n' -W bsdmainutils
-- dpkg-query -f '${Status}\n' -W bsdmainutils | grep -E '^(install|hold) ok installed$'
-- dpkg-query -f '${Status}\n' -W ncurses-dev
-- dpkg-query -f '${Status}\n' -W ncurses-dev | grep -E '^(install|hold) ok installed$'
-- dpkg-query -f '${Status}\n' -W libcurl4-openssl-dev
-- dpkg-query -f '${Status}\n' -W libcurl4-openssl-dev | grep -E '^(install|hold) ok installed$'
-- dpkg-query -f '${Status}\n' -W libldap-2.4.2
-- dpkg-query -f '${Status}\n' -W libldap-2.4.2 | grep -E '^(install|hold) ok installed$'
+- dpkg-query -f '${Status}' -W bsdmainutils ; echo
+- dpkg-query -f '${Status}' -W bsdmainutils | grep -E '^(install|hold) ok installed$'
+- dpkg-query -f '${Status}' -W ncurses-dev ; echo
+- dpkg-query -f '${Status}' -W ncurses-dev | grep -E '^(install|hold) ok installed$'
+- dpkg-query -f '${Status}' -W libcurl4-openssl-dev ; echo
+- dpkg-query -f '${Status}' -W libcurl4-openssl-dev | grep -E '^(install|hold) ok installed$'
+- dpkg-query -f '${Status}' -W libldap-2.4.2 ; echo
+- dpkg-query -f '${Status}' -W libldap-2.4.2 | grep -E '^(install|hold) ok installed$'
