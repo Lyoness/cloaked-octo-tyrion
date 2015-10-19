@@ -9,6 +9,7 @@ group: edge
 install: echo install whatever
 
 script:
+- sudo apt-add-repository -y multiverse
 - sudo apt-get update -yqq
 - for f in $(find /etc/apt/sources* -type f) ; do grep -H multiverse $f ; done
 - dpkg -l
