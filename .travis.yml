@@ -13,6 +13,7 @@ script:
 - sudo apt-get update -yqq
 - for f in $(find /etc/apt/sources* -type f) ; do grep -H multiverse $f ; done
 - cat /etc/apt/sources.list
+- cat /etc/cloud/templates/sources.list.tmpl
 - dpkg -l
 - dpkg-query -f '${Status}' -W bsdmainutils ; echo
 - dpkg-query -f '${Status}' -W bsdmainutils | grep -E '^(install|hold) ok installed$'
