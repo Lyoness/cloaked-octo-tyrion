@@ -7,8 +7,10 @@ dist: trusty
 group: edge
 
 before_install:
-- echo 'all.rvmrcs' >> $rvm_user_path/rvmrc_ignored
-- echo 'allGemfiles' >> $rvm_user_path/rvmrc_ignored
+- cat ~/.bashrc
+- cat ~/.bash_profile
+- echo 'all.rvmrcs' >> /usr/local/rvm/user/rvmrc_ignored
+- echo 'allGemfiles' >> /usr/local/rvm/user/rvmrc_ignored
 - echo 'rvm use default' > .rvmrc
 - cd .
 
