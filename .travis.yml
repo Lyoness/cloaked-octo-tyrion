@@ -1,14 +1,17 @@
 language: ruby
 
-sudo: required
-
-dist: trusty
-
-group: edge
+matrix:
+  include:
+  - sudo: required
+    dist: trusty
+    group: edge
+  - sudo: false
+  - sudo: required
 
 before_install:
 - cat ~/.bashrc
 - cat ~/.bash_profile
+- cat ~/.rvmrc
 - echo 'all.rvmrcs' >> /usr/local/rvm/user/rvmrc_ignored
 - echo 'allGemfiles' >> /usr/local/rvm/user/rvmrc_ignored
 - echo 'rvm use default' > .rvmrc
