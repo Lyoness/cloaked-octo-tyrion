@@ -1,4 +1,4 @@
-language: generic
+language: ruby
 
 sudo: required
 
@@ -6,20 +6,9 @@ dist: trusty
 
 group: edge
 
-install: echo install whatever
+before_install:
+- rvm rvmrc warning ignore all.rvmrcs
 
 script:
-- sudo apt-get update -yqq
-- sudo apt-get purge -yq vim
-- sudo apt-get install -yq vim-tiny
-- hash -r
-- which vim
-- which vi
-- vim --version
-- vi --version
-- sudo apt-get install -yq vim
-- hash -r
-- which vim
-- which vi
-- vim --version
-- vi --version
+- find /usr/local/rvm -name db
+- for f in $(find /usr/local/rvm -name db) ; do echo "$f --->" ; cat $f ; done
