@@ -8,6 +8,8 @@ group: edge
 
 before_install:
 - rvm rvmrc warning ignore all.rvmrcs
+- echo 'rvm use default' > .rvmrc
+- cd .
 
 script:
 - find /usr/local/rvm -name db
