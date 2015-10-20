@@ -7,12 +7,9 @@ dist: trusty
 group: edge
 
 before_install:
-# - rvm rvmrc warning ignore all.rvmrcs
-# - echo 'rvm use default' > .rvmrc
-# - cd .
+- echo 'all.rvmrcs' >> $rvm_user_path/rvmrc_ignored
+- echo 'allGemfiles' >> $rvm_user_path/rvmrc_ignored
+- echo 'rvm use default' > .rvmrc
+- cd .
 
-script:
-- find /usr/local/rvm -name db
-- for f in $(find /usr/local/rvm -name db) ; do echo "$f --->" ; cat $f ; done
-- find /usr/local/rvm -name rvmrc_ignored
-- for f in $(find /usr/local/rvm -name rvmrc_ignored) ; do echo "$f --->" ; cat $f ; done
+script: echo whatever
