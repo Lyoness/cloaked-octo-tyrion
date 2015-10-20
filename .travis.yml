@@ -9,6 +9,7 @@ matrix:
   - sudo: required
 
 before_install:
+- bash -c "source ~/.bashrc ; rvm default do echo whatever"
 - if test -f ~/.bashrc ; then cat ~/.bashrc ; fi
 - if test -f ~/.bash_profile ; then cat ~/.bash_profile ; fi
 - if test -f ~/.rvmrc ; then cat ~/.rvmrc ; fi
