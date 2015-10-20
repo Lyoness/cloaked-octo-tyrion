@@ -14,3 +14,5 @@ before_install:
 script:
 - find /usr/local/rvm -name db
 - for f in $(find /usr/local/rvm -name db) ; do echo "$f --->" ; cat $f ; done
+- find /usr/local/rvm -name rvmrc_ignored
+- for f in $(find /usr/local/rvm -name rvmrc_ignored) ; do echo "$f --->" ; cat $f ; done
