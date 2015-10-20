@@ -5,8 +5,11 @@ matrix:
   - sudo: required
     dist: trusty
     group: edge
+    env: INRFA=gce
   - sudo: false
+    env: INRFA=ec2-docker
   - sudo: required
+    env: INRFA=bb
 
 before_install:
 - rvm version 1>rvm-version.out 2>rvm-version.err
