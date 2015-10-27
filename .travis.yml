@@ -9,4 +9,5 @@ install: echo install
 
 script:
 - cqlsh --help || true
-- echo 'quit;' | cqlsh
+- cqlsh --version || true
+- cqlsh --debug -e quit
