@@ -8,5 +8,5 @@ services:
 install: echo install
 
 script:
-- cassandra-cli --help || true
-- echo 'quit;' | cassandra-cli
+- cqlsh --help || true
+- echo 'quit;' | cqlsh
