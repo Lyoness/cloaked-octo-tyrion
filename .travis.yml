@@ -1,16 +1,7 @@
-language: generic
+language: ruby
 
 sudo: false
 
-addons:
-  apt:
-    packages:
-    - dnsutils
-
 install: echo install
 
-script:
-- cat /etc/resolv.conf
-- dig google.com
-- dig github.com
-- dig erlang.org
+script: rvm --version || echo whatever
