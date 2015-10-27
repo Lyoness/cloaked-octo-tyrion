@@ -1,9 +1,13 @@
-CREATE KEYSPACE travis;
+CREATE KEYSPACE travis
+WITH REPLICATION = {
+  'class': 'SimpleStrategy',
+  'replication_factor': 1
+};
 
 USE travis;
 
 CREATE TABLE users (
-  first varchar,
+  first varchar PRIMARY KEY,
   last varchar,
   age varchar,
 );
