@@ -17,6 +17,6 @@ script:
 - cqlsh --debug -e quit 1>cqlsh-debug-e-quit.out 2>cqlsh-debug-e-quit.err
 - cat cqlsh-debug-e-quit.out
 - cat cqlsh-debug-e-quit.err
-- cqlsh --debug -f schema.cql 1>cqlsh-debug-f-schema.out 2>cqlsh-debug-f-schema.err
-- cat cqlsh-debug-f-schema.out
-- cat cqlsh-debug-f-schema.err
+- cqlsh --debug -e 'source schema.cql' 1>cqlsh-debug-e-source.out 2>cqlsh-debug-e-source.err
+- cat cqlsh-debug-e-source.out
+- cat cqlsh-debug-e-source.err
