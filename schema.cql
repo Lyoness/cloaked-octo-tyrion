@@ -1,20 +1,14 @@
-create keyspace Twissandra;
+CREATE KEYSPACE travis;
 
-use Twissandra;
+USE travis;
 
-create column family User with comparator = UTF8Type;
+CREATE TABLE users (
+  first varchar,
+  last varchar,
+  age varchar,
+);
 
-update column family User with column_metadata =
-[
-{column_name: first, validation_class: UTF8Type},
-{column_name: last, validation_class: UTF8Type},
-{column_name: age, validation_class: UTF8Type, index_type: KEYS}
-];
+INSERT INTO users (first, last, age)
+  VALUES ('Jane', 'Doe', '84');
 
-assume User keys as utf8;
-
-set User['adakota']['first'] = 'Allen';
-set User['adakota']['last'] = 'Dakota';
-set User['adakota']['age'] = '45';
-
-get User['adakota'];
+SELECT * FROM users WHERE first = 'Jane';
