@@ -2,6 +2,10 @@ language: ruby
 
 sudo: false
 
+services:
+- cassandra
+
 install: echo install
 
-script: rvm --version || echo whatever
+script:
+- cassandra-cli -host localhost -port 9160 &
