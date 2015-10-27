@@ -15,4 +15,6 @@ CREATE TABLE users (
 INSERT INTO users (first, last, age)
   VALUES ('Jane', 'Doe', '84');
 
+EXPAND ON;
+
 SELECT * FROM users WHERE first = 'Jane';
