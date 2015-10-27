@@ -8,6 +8,6 @@ services:
 install: echo install
 
 script:
-- cassandra-cli -version
-- cassandra-cli -host localhost -port 9160 &
+- cassandra-cli -help
+- echo quit | cassandra-cli -host localhost -port 9160
 - sleep 5
