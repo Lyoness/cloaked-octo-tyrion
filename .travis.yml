@@ -3,20 +3,13 @@ language: ruby
 sudo: false
 
 services:
-- cassandra
+- mongo
 
 install: echo install
 
 script:
-- cqlsh --help 1>cqlsh-help.out 2>cqlsh-help.err
-- cat cqlsh-help.out
-- cat cqlsh-help.err
-- cqlsh --version 1>cqlsh-version.out 2>cqlsh-version.err
-- cat cqlsh-version.out
-- cat cqlsh-version.err
-- cqlsh --debug -e quit 1>cqlsh-debug-e-quit.out 2>cqlsh-debug-e-quit.err
-- cat cqlsh-debug-e-quit.out
-- cat cqlsh-debug-e-quit.err
-- cqlsh --debug -f schema.cql 1>cqlsh-debug-f-schema.out 2>cqlsh-debug-f-schema.err
-- cat cqlsh-debug-f-schema.out
-- cat cqlsh-debug-f-schema.err
+- mongo --help
+- mongo --eval "var myCursor = db.testData.find( { x: 6 }); myCursor.forEach(printjson);" 1>mongo-eval.out 2>mongo-eval.err
+- cat mongo-eval.out
+- cat mongo-eval.err
+- sleep 5
