@@ -3,7 +3,7 @@ language: ruby
 sudo: false
 
 services:
-- mongo
+- mongodb
 
 install: echo install
 
