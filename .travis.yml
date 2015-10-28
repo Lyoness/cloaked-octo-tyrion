@@ -9,7 +9,7 @@ install: echo install
 
 script:
 - mongo --help
-- mongo --eval "var myCursor = db.testData.find( { x: 6 }); myCursor.forEach(printjson);" 1>mongo-eval.out 2>mongo-eval.err
+- 'mongo --eval "var myCursor = db.testData.find( { x: 6 }); myCursor.forEach(printjson);" 1>mongo-eval.out 2>mongo-eval.err'
 - cat mongo-eval.out
 - cat mongo-eval.err
 - sleep 5
