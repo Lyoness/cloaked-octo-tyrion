@@ -10,8 +10,11 @@ install: echo install
 script:
 - riak version
 - sudo riak ping
+- sudo ps auxwww | grep -i riak
 - sudo riak-admin test
 - sleep 10
+- sudo ps auxwww | grep -i riak
 - sudo riak-admin test
 - sleep 10
+- sudo ps auxwww | grep -i riak
 - sudo riak-admin test
