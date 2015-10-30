@@ -8,4 +8,10 @@ services:
 install: echo install
 
 script:
+- riak version
+- sudo riak ping
+- sudo riak-admin test
+- sleep 10
+- sudo riak-admin test
+- sleep 10
 - sudo riak-admin test
