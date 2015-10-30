@@ -10,4 +10,4 @@ install: echo install
 script:
 - riak version
 - sudo riak ping
-- 'for n in 0 1 2 3 4 ; do sudo riak-admin test || true ; sleep 1 ; done'
+- 'for n in 0 1 2 3 4 ; do sudo riak-admin test || true ; echo ; sleep 1 ; done'
