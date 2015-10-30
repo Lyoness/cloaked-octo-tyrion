@@ -1,16 +1,11 @@
 language: ruby
 
-sudo: false
+sudo: required
 
 services:
-- mongodb
+- riak
 
 install: echo install
 
 script:
-- mongo --help
-- 'mongo --eval "db.testData.insert( { x : 6 } );"'
-- 'mongo --eval "var myCursor = db.testData.find( { x: 6 }); myCursor.forEach(printjson);" 1>mongo-eval.out 2>mongo-eval.err'
-- cat mongo-eval.out
-- cat mongo-eval.err
-- sleep 5
+- sudo riak-admin test
