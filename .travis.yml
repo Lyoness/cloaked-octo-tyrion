@@ -1,7 +1,7 @@
-language: ruby
+language: php
 
-sudo: required
+sudo: false
 
 install: echo install
 
-script: rvm_ruby_string='jruby-9.0.1.0' && __rvm_ruby_string && echo $rvm_ruby_string
+script: for f in $(find /home/travis/.phpenv/versions -name travis.ini) ; do echo "---> $f" ; cat $f ; done
