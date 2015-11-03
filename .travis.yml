@@ -1,5 +1,9 @@
 language: ruby
 
+sudo: required
+
+dist: trusty
+
 install: echo install
 
 script: wget --version
