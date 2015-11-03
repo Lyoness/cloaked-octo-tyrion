@@ -1,23 +1,5 @@
 language: ruby
 
-matrix:
-  include:
-  - sudo: required
-    dist: trusty
-    group: edge
-    env: INRFA=gce
-  - sudo: false
-    env: INRFA=ec2-docker
-  - sudo: required
-    env: INRFA=bb
+install: echo install
 
-before_install:
-- rvm version 1>rvm-version.out 2>rvm-version.err
-- cat rvm-version.out
-- cat rvm-version.err
-- rvm list 1>rvm-list.out 2>rvm-list.err
-- cat rvm-list.out
-- cat rvm-list.err
-- bash -c "source ~/.bashrc ; rvm default do echo whatever"
-
-script: echo whatever
+script: wget --version
