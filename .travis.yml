@@ -1,4 +1,4 @@
-language: ruby
+language: perl
 
 sudo: required
 
@@ -6,4 +6,6 @@ dist: trusty
 
 install: echo install
 
-script: wget --version
+script:
+- find $(perl -e 'print "$_" for @INC') -iname 'config\.pm' || true
+- find ~/perl5 -iname 'config\.pm'
