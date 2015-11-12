@@ -8,7 +8,9 @@ group: dev
 
 install:
 - source ~/.bashrc
+- type rvm | head -1 || true
 - source ~/.rvm/scripts/rvm || true
+- type rvm | head -1 || true
 
 script:
 - rvm use default
