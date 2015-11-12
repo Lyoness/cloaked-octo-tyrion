@@ -7,8 +7,10 @@ dist: trusty
 group: dev
 
 install:
-- source ~/.bashrc
+- cat ~/.bashrc || true
+- source ~/.bashrc || true
 - type rvm | head -1 || true
+- cat ~/.rvm/scripts/rvm || true
 - source ~/.rvm/scripts/rvm || true
 - type rvm | head -1 || true
 
