@@ -1,4 +1,4 @@
-language: ruby
+language: python
 
 sudo: required
 
@@ -6,6 +6,9 @@ dist: trusty
 
 group: dev
 
-install: echo install
+install:
+- source ~/.bashrc
+- source ~/.rvm/scripts/rvm || true
 
-script: echo script
+script:
+- rvm use default
