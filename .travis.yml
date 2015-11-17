@@ -3,10 +3,20 @@ language: python
 matrix:
   include:
   - sudo: required
+    env: INFRA=bb GROUP=stable
+  - sudo: false
+    env: INFRA=ec2 GROUP=stable
   - sudo: required
     dist: trusty
+    env: INFRA=gce GROUP=stable
   - services: docker
-  - sudo: false
+    env: INFRA=gce GROUP=stable
+  - services: docker
+    group: edge
+    env: INFRA=gce GROUP=edge
+  - services: docker
+    group: dev
+    env: INFRA=gce GROUP=dev
 
 install: echo install eh
 
