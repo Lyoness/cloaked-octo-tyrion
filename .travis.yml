@@ -8,8 +8,6 @@ matrix:
   - services: docker
   - sudo: false
 
-install:
-- type rvm | head -1 || true
+install: echo install eh
 
-script:
-- rvm use default
+script: echo script eh
