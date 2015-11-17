@@ -1,10 +1,12 @@
 language: python
 
-sudo: required
-
-dist: trusty
-
-group: dev
+matrix:
+  include:
+  - sudo: required
+  - sudo: required
+    dist: trusty
+  - services: docker
+  - sudo: false
 
 install:
 - type rvm | head -1 || true
