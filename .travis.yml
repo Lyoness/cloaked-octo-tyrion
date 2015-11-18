@@ -1,6 +1,6 @@
 language: python
 
-services: docker
+sudo: required
 
 install: echo install eh
 
