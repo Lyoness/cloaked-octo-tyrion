@@ -2,7 +2,7 @@ language: python
 
 dist: trusty
 
-group: dev
+group: edge
 
 install: echo install eh
 
