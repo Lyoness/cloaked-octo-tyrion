@@ -4,6 +4,6 @@ dist: trusty
 
 group: edge
 
-install: echo install eh
+install: find /etc/apt/sources.list.d -name '*docker*' | xargs cat
 
 script: echo script eh
