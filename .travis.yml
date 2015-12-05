@@ -1,18 +1,13 @@
-language: python
+language: php
+
+php: 7
 
 sudo: required
 
-env:
-- N=0
-- N=1
-- N=2
-- N=3
-- N=4
-- N=5
-- N=6
-- N=7
-- N=8
-- N=9
+group: stable
 
-install: echo install eh
+install:
+- sudo apt-get update
+- sudo apt-get install apache2 libapache2-mod-fastcgi
+
 script: echo script eh
