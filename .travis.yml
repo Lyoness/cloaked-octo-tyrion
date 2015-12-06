@@ -13,6 +13,8 @@ install:
 - export PATH="/var/tmp/bonk:$PATH"
 
 script:
+- visudo -x /var/tmp/visudo.json
+- jq . < /var/tmp/visudo.json
 - bonk
 - which bonk
 - sudo bonk
