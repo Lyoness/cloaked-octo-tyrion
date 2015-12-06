@@ -4,11 +4,20 @@ php: 7
 
 sudo: required
 
-group: edge
+group: legacy
 
 install:
-- cat /etc/apt/sources.list
-- sudo apt-get update
-- sudo apt-get install apache2 libapache2-mod-fastcgi
+- mkdir -p /var/tmp/bonk
+- printf '#!/usr/bin/env bash\necho bonk' > /var/tmp/bonk/bonk
+- chmod +x /var/tmp/bonk/bonk
+- export PATH="/var/tmp/bonk:$PATH"
 
-script: echo script eh
+script:
+- bonk
+- which bonk
+- sudo bonk
+- sudo which bonk
+- sudo -E bonk
+- sudo -E which bonk
+- sudo -E PATH=$PATH bonk
+- sudo -E PATH=$PATH which bonk
