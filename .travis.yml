@@ -6,20 +6,6 @@ sudo: required
 
 group: legacy
 
-install:
-- mkdir -p /var/tmp/bonk
-- printf '#!/usr/bin/env bash\necho bonk' > /var/tmp/bonk/bonk
-- chmod +x /var/tmp/bonk/bonk
-- export PATH="/var/tmp/bonk:$PATH"
+install: echo install hay
 
-script:
-- visudo -x /var/tmp/visudo.json
-- jq . < /var/tmp/visudo.json
-- bonk
-- which bonk
-- sudo bonk
-- sudo which bonk
-- sudo -E bonk
-- sudo -E which bonk
-- sudo -E PATH=$PATH bonk
-- sudo -E PATH=$PATH which bonk
+script: git --version
