@@ -4,6 +4,8 @@ sudo: required
 
 group: edge
 
-install: echo install hay
+before_install: ./fix-gce-mirror
 
-script: cat /etc/apt/sources.list
+install: apt-get install -y dnsutils
+
+script: dig google.com
