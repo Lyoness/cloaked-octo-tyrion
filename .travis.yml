@@ -1,6 +1,4 @@
-language: php
-
-php: 7
+language: python
 
 sudo: required
 
@@ -8,6 +6,4 @@ group: edge
 
 install: echo install hay
 
-script:
-- cat /etc/fstab
-- mount -t tmpfs
+script: cat /etc/apt/sources.list
