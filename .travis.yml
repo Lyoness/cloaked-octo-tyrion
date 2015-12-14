@@ -4,8 +4,6 @@ sudo: required
 
 group: edge
 
-before_install: ./fix-gce-mirror
-
 install: sudo apt-get install -y dnsutils
 
 script: dig google.com
