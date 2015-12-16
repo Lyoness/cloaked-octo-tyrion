@@ -15,6 +15,7 @@ script:
 - hostname
 - dig $(hostname)
 - cat /etc/hosts
+- cat /etc/cloud/templates/hosts.tmpl
 - for f in $(find /var/log -wholename '*cloud*' -type f) ; do
     echo "---> $f:" ;
     cat $f ;
