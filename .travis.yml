@@ -6,4 +6,4 @@ dist: trusty
 
 group: dev
 
-script: sudo apt-cache search gcc | grep ^gcc
+script: sudo apt-cache search gcc | grep ^gcc | sort
