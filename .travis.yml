@@ -1,13 +1,17 @@
-language: bash
+language: go
 
 sudo: required
 
-dist: trusty
+dist: precise
 
 group: dev
 
 script:
-- sudo pollinate
+- sudo apt-add-repository -y 'ppa:pollinate/ppa'
+- sudo apt-get update -y
+- sudo apt-get install -y pollinate
+- sudo pollinate --version
+
 - hostname
 - ping -c 1 $(hostname)
 - cat /etc/hosts
