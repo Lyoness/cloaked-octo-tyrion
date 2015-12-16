@@ -6,16 +6,12 @@ dist: precise
 
 group: dev
 
-before_install:
-- cat /etc/cloud/cloud.cfg || true
-
-install: sudo apt-get install -y dnsutils
-
 script:
 - hostname
-- dig $(hostname)
+- ping -c 1 $(hostname)
 - cat /etc/hosts
 - cat /etc/cloud/templates/hosts.tmpl
+- cat /etc/cloud/cloud.cfg || true
 - for f in $(find /etc/cloud/cloud.cfg.d -type f) ; do
     echo "---> $f:" ;
     cat $f ;
