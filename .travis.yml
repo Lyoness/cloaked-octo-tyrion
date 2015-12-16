@@ -1,16 +1,14 @@
-language: bash
+language: python
 
 sudo: required
 
-dist: trusty
+dist: precise
 
-group: dev
+group: edge
 
 before_install:
 - cat /etc/cloud/cloud.cfg || true
 
-install:
-- sudo apt-get update
-- sudo apt-get install -y dnsutils
+install: echo hay
 
-script: dig $(hostname)
+script: echo hay
