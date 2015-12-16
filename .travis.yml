@@ -10,7 +10,7 @@ script:
 - sudo apt-add-repository -y 'ppa:pollinate/ppa'
 - sudo apt-get update -y
 - sudo apt-get install -y pollinate
-- sudo pollinate --version
+- sudo pollinate
 
 - hostname
 - ping -c 1 $(hostname)
