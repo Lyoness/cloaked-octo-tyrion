@@ -25,3 +25,4 @@ script:
     cat $f ;
   done
 - sudo cat /var/lib/cloud/data/result.json | jq .
+- sudo cat /var/cache/pollinate/log || true
