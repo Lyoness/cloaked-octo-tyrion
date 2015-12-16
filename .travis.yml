@@ -7,6 +7,7 @@ dist: precise
 group: dev
 
 script:
+- sudo pollinate
 - hostname
 - ping -c 1 $(hostname)
 - cat /etc/hosts
