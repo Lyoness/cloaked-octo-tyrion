@@ -24,3 +24,4 @@ script:
     echo "---> $f:" ;
     cat $f ;
   done
+- jq . < /var/lib/cloud/data/result.json
