@@ -4,7 +4,7 @@ sudo: required
 
 dist: precise
 
-group: legacy
+group: edge
 
 addons:
   postgresql: 9.3
