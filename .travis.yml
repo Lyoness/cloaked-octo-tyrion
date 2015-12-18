@@ -4,6 +4,6 @@ sudo: required
 
 dist: trusty
 
-group: dev
+group: edge
 
-script: sudo apt-cache search gcc | grep ^gcc | sort
+script: sudo locale -a
