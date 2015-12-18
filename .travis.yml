@@ -14,18 +14,17 @@ env:
   - PGPORT=15432
 
 script:
+- sudo locale -a > locales-a.txt
+- sudo locale-gen en_GB
+- sudo update-locale
+- sudo locale -a > locales-b.txt
+- diff -u locales-a.txt locales-b.txt || true
 - sudo chown -R travis /var/run/postgresql
 - initdb --locale=en_GB.UTF-8 -D $PWD/pg_en_GB -U travis -A trust -E UTF-8
 - pg_ctl -D $PWD/pg_en_GB -l $PWD/pg_en_GB/server.log -o "-p $PGPORT" start
 - travis_retry createdb -p $PGPORT -l en_GB.UTF-8 travis
 - psql -p $PGPORT travis < locale-test-load.sql
 - psql -p $PGPORT travis < locale-test.sql || true
-- sudo locale -a > locales-a.txt
-- sudo locale-gen en_GB
-- sudo update-locale
-- psql -p $PGPORT travis < locale-test.sql || true
-- sudo locale -a > locales-b.txt
-- diff -u locales-a.txt locales-b.txt || true
 
 after_script:
 - cat $PWD/pg_en_GB/server.log
