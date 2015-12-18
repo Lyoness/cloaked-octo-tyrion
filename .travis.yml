@@ -7,8 +7,11 @@ dist: precise
 group: legacy
 
 script:
+- psql < locale-test-schema.sql
+- psql < locale-test.sql || true
 - sudo locale -a > locales-a.txt
 - sudo locale-gen en_GB
 - sudo update-locale
+- psql < locale-test.sql || true
 - sudo locale -a > locales-b.txt
 - diff -u locales-a.txt locales-b.txt || true
