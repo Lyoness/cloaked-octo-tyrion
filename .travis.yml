@@ -6,4 +6,8 @@ dist: precise
 
 group: legacy
 
-script: sudo locale -a
+script:
+- sudo locale -a > locales-a.txt
+- sudo locale-gen en_GB
+- sudo locale -a > locales-b.txt
+- diff -u locales-a.txt locales-b.txt
