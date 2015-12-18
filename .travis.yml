@@ -9,5 +9,6 @@ group: legacy
 script:
 - sudo locale -a > locales-a.txt
 - sudo locale-gen en_GB
+- sudo update-locale
 - sudo locale -a > locales-b.txt
 - diff -u locales-a.txt locales-b.txt
