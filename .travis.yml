@@ -25,3 +25,6 @@ script:
 - psql -p $PGPORT travis < locale-test.sql || true
 - sudo locale -a > locales-b.txt
 - diff -u locales-a.txt locales-b.txt || true
+
+after_script:
+- cat $PWD/pg_en_GB/server.log
