@@ -13,6 +13,9 @@ env:
   global:
   - PGPORT=15432
 
+before_script:
+- sudo dpkg -l | grep language-pack
+
 script:
 - sudo locale -a > locales-a.txt
 - sudo locale-gen en_GB
