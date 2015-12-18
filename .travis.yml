@@ -11,4 +11,4 @@ script:
 - sudo locale-gen en_GB
 - sudo update-locale
 - sudo locale -a > locales-b.txt
-- diff -u locales-a.txt locales-b.txt
+- diff -u locales-a.txt locales-b.txt || true
