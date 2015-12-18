@@ -7,11 +7,15 @@ dist: precise
 group: legacy
 
 script:
-- psql < locale-test-schema.sql
-- psql < locale-test.sql || true
+- sudo service postgresql stop || true
+- initdb --locale=en_GB.UTF-8 -D $PWD/pg_en_GB -U travis -A trust -E UTF-8
+- pg_ctl -D $PWD/pg_en_GB -l $PWD/pg_en_GB/server.log start
+- createdb -l en_GB.UTF-8 travis
+- psql travis < locale-test-schema.sql
+- psql travis < locale-test.sql || true
 - sudo locale -a > locales-a.txt
 - sudo locale-gen en_GB
 - sudo update-locale
-- psql < locale-test.sql || true
+- psql travis < locale-test.sql || true
 - sudo locale -a > locales-b.txt
 - diff -u locales-a.txt locales-b.txt || true
