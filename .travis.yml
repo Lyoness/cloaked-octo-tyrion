@@ -1,6 +1,9 @@
-language: bash
-sudo: false
-before_script:
-- echo $GOMAXPROCS
-- nproc
-- date
+language: ruby
+
+sudo: required
+
+group: legacy
+
+install: echo install
+
+script: erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().' -noshell
