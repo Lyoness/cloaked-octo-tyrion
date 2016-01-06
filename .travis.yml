@@ -1,9 +1,9 @@
-language: ruby
+language: erlang
 
 sudo: required
 
-dist: precise
+dist: trusty
 
 group: edge
 
-script: find ~/ -wholename '*virtualenv*'
+script: ls ~/otp/*
