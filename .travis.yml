@@ -1,9 +1,10 @@
-language: erlang
+language: bash
 
 sudo: required
 
 dist: trusty
 
-group: edge
-
-script: ls ~/otp/*
+script:
+- find /usr/local -name '*phantomjs*'
+- which phantomjs
+- phantomjs --version
