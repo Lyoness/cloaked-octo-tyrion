@@ -4,7 +4,13 @@ sudo: required
 
 dist: trusty
 
+group: edge
+
 script:
 - find /usr/local -name '*phantomjs*'
-- which phantomjs
-- phantomjs --version
+- which phantomjs || true
+- phantomjs --version || true
+- sudo apt-get install -y phantomjs
+- find /usr/local -name '*phantomjs*'
+- which phantomjs || true
+- phantomjs --version || true
