@@ -6,4 +6,4 @@ dist: trusty
 
 group: edge
 
-script: go run memstress.go
+script: sudo apt-get install -y cloc
