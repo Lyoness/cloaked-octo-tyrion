@@ -1,9 +1,9 @@
-language: ruby
+language: generic
 
-sudo: required
+os: osx
 
-group: legacy
+install:
+- brew install xhyve
 
-install: echo install
-
-script: erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().' -noshell
+script:
+- xhyve -h
