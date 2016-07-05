@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println("ohhai")
+	fmt.Println("ohhaiiii")
 	fmt.Printf("%s\n", os.Getenv("TRAVIS_GO_VERSION"))
 }
