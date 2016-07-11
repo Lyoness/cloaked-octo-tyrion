@@ -2,8 +2,15 @@ language: go
 
 sudo: required
 
+addons:
+  apt:
+    sources:
+    - google-chrome
+
 dist: trusty
 
 group: edge
 
-script: sudo apt-get install -y cloc
+script:
+- sudo apt search google
+- sudo apt install google-chrome-stable
