@@ -2,6 +2,13 @@ language: generic
 
 sudo: false
 
+addons:
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
+
 install: echo install
 
 script: env | grep TRAVIS
