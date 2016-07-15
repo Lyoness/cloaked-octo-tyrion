@@ -1,4 +1,4 @@
-language: generic
+language: ruby
 
 sudo: required
 
@@ -7,13 +7,6 @@ dist: trusty
 group: edge
 
 script:
-- sudo stop docker ;
-  sudo cat /etc/default/docker ;
-  echo 'DOCKER_OPTS="$DOCKER_OPTS --storage-opt dm.basesize=20G"' | sudo tee -a /etc/default/docker ;
-  sudo cat /etc/default/docker ;
-  sudo start docker ;
-  sleep 5 ;
-  sudo docker version
-- docker run -d 'ubuntu-upstart:14.04' /sbin/init > .container-name
-- docker inspect $(cat .container-name)
-- docker exec -it $(cat .container-name) df -h
+- for d in $(find / -maxdepth 1 -type d) ; do 
+    sudo du -hs $d ;
+  done
