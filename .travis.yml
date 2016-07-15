@@ -1,16 +1,16 @@
-language: go
+language: generic
 
 sudo: required
-
-addons:
-  apt:
-    sources:
-    - google-chrome
 
 dist: trusty
 
 group: edge
 
 script:
-- sudo apt search google
-- sudo apt install google-chrome-stable
+- sudo stop docker ;
+  sudo cat /etc/default/docker ;
+  echo 'DOCKER_OPTS="$DOCKER_OPTS --storage-opt dm.basesize=20G"' | sudo tee -a /etc/default/docker ;
+  sudo cat /etc/default/docker ;
+  sudo start docker ;
+  sleep 5 ;
+  sudo docker version ;
