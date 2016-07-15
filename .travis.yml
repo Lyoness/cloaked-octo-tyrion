@@ -13,4 +13,7 @@ script:
   sudo cat /etc/default/docker ;
   sudo start docker ;
   sleep 5 ;
-  sudo docker version ;
+  sudo docker version
+- docker run -d 'ubuntu-upstart:14.04' /sbin/init > .container-name
+- docker inspect $(cat .container-name)
+- docker exec -it $(cat .container-name) df -h
