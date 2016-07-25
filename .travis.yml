@@ -1,4 +1,4 @@
-language: ruby
+language: erlang
 
 sudo: required
 
@@ -7,6 +7,6 @@ dist: trusty
 group: edge
 
 script:
-- for d in $(find / -maxdepth 1 -type d) ; do 
-    sudo du -hs $d ;
-  done
+- erl -eval "erlang:display(erlang:system_info(otp_release)), halt()." -noshell
+- kerl version
+- rebar --version
