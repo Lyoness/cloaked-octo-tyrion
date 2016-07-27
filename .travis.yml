@@ -1,4 +1,4 @@
-language: erlang
+language: ruby
 
 sudo: required
 
@@ -7,6 +7,6 @@ dist: trusty
 group: edge
 
 script:
-- erl -eval "erlang:display(erlang:system_info(otp_release)), halt()." -noshell
-- kerl version
-- rebar --version
+- git clone --branch=meat-serverspec-combination
+    'https://github.com/travis-ci/packer-templates.git'
+- phantomjs packer-templates/cookbooks/lib/features/files/phantomjs_test_google.js
