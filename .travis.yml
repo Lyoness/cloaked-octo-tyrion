@@ -16,6 +16,6 @@ matrix:
     env: OHAI=2
 
 script:
-- mvn 'help:describe' -Dplugin=help 2>maven.err 1>maven.out
-- cat maven.out
-- cat maven.err
+- which xset
+- DISPLAY=:99.0 xset -q
+- sudo apt search xset
