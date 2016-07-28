@@ -6,7 +6,10 @@ dist: trusty
 
 group: edge
 
+matrix:
+  include:
+  - dist: precise
+    language: ruby
+
 script:
-- git clone --branch=meat-serverspec-combination
-    'https://github.com/travis-ci/packer-templates.git'
-- phantomjs packer-templates/cookbooks/lib/features/files/phantomjs_test_google.js
+- mvn 'help:describe' -Dplugin=help
