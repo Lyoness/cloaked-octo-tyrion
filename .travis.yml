@@ -14,3 +14,5 @@ matrix:
 
 script:
 - mvn 'help:describe' -Dplugin=help 2>maven.err 1>maven.out
+- cat maven.out
+- cat maven.err
