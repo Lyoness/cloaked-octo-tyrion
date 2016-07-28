@@ -10,6 +10,7 @@ matrix:
   include:
   - dist: precise
     language: ruby
+    group: edge
 
 script:
-- mvn 'help:describe' -Dplugin=help
+- mvn 'help:describe' -Dplugin=help 2>maven.err 1>maven.out
