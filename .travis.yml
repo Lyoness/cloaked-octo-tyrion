@@ -4,11 +4,16 @@ sudo: required
 
 dist: trusty
 
+env:
+  matrix:
+  - OHAI=1
+
 group: edge
 
 matrix:
   include:
   - dist: precise
+    env: OHAI=2
 
 script:
 - mvn 'help:describe' -Dplugin=help 2>maven.err 1>maven.out
