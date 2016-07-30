@@ -18,7 +18,5 @@ matrix:
     env: OHAI=2
 
 script:
-- sh -e /etc/init.d/xvfb start
-- which xset
-- DISPLAY=:99.0 xset -q
-- sudo apt search xset
+- which gsutil
+- gsutil --version
