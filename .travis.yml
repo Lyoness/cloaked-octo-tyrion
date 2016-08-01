@@ -4,18 +4,7 @@ sudo: required
 
 dist: trusty
 
-env:
-  matrix:
-  - OHAI=1
-  global:
-  - 'DISPLAY=:99.0'
-
 group: edge
-
-matrix:
-  include:
-  - dist: precise
-    env: OHAI=2
 
 script:
 - sudo apt-get update -yqq
