@@ -12,4 +12,4 @@ script:
 - sudo apt-get install -o Dpkg::Options::="--force-confnew" -yqq docker-engine lvm2 xfsprogs
 - echo 'DOCKER_OPTS="$DOCKER_OPTS --storage-driver devicemapper"' | sudo tee -a /etc/default/docker
 - sudo service docker restart
-- docker run --rm -it --storage-opt size=5G ubuntu:14.04 df -h
+- docker run --rm -it --storage-opt size=11G ubuntu:14.04 df -h
