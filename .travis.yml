@@ -18,5 +18,5 @@ matrix:
     env: OHAI=2
 
 script:
-- sudo apt-get update
-- sudo apt-get upgrade docker-engine
+- sudo apt-get update -yqq
+- sudo apt-get upgrade -yqq docker-engine
