@@ -19,4 +19,5 @@ matrix:
 
 script:
 - sudo apt-get update -yqq
-- sudo apt-get upgrade -yqq docker-engine
+- sudo apt search docker-engine
+- sudo apt-get install -yqq docker-engine
