@@ -2,9 +2,14 @@ language: ruby
 
 sudo: required
 
-dist: precise
+dist: trusty
 
 group: dev
 
 script:
-- echo wowsa
+- sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+- echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+- sudo apt-get update -yqq
+- sudo apt-get install -yqq mongodb-org
+- sudo netstat -a
+- mongo --eval "var myCursor = db.testData.find( { x: 6 }); myCursor.forEach(printjson);"
