@@ -18,5 +18,5 @@ matrix:
     env: OHAI=2
 
 script:
-- which gsutil
-- gsutil --version
+- sudo apt-get update
+- sudo apt-get upgrade docker-engine
