@@ -1,4 +1,7 @@
-language: php
+language: python
+
+services:
+- rabbitmq
 
 sudo: required
 
@@ -7,4 +10,4 @@ dist: trusty
 install: echo nope
 
 script:
-- find ~/.phpenv -name '*.so'
+- sudo rabbitmqctl status
