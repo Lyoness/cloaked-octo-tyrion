@@ -14,5 +14,5 @@ matrix:
 install: echo nope
 
 script:
-- sudo service mongod start
-- sudo service mongod stop
+- sudo service mongod start || echo "OH NO $?"
+- sudo service mongod stop || echo "OH NO $?"
