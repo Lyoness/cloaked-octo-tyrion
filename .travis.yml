@@ -6,13 +6,11 @@ group: edge
 
 dist: precise
 
-matrix:
-  include:
-  - dist: trusty
-    language: universe
-
-install: echo nope
-
 script:
-- sudo service mongod start || echo "OH NO $?"
-- sudo service mongod stop || echo "OH NO $?"
+- curl -L https://omnitruck.chef.io/install.sh | sudo bash
+- ip addr
+- ohai | grep ip6address
+- sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+- sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+- ip addr
+- ohai | grep ip6address
