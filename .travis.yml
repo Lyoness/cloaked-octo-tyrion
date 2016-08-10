@@ -2,9 +2,12 @@ language: python
 
 sudo: required
 
-group: edge
-
 dist: precise
+
+matrix:
+  include:
+  - language: universe
+    dist: trusty
 
 script:
 - curl -L https://omnitruck.chef.io/install.sh | sudo bash
