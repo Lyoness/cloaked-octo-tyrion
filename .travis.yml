@@ -7,5 +7,4 @@ dist: trusty
 install: echo nope
 
 script:
-- ping -c 1 127.0.0.1
-- ping -c 1 localhost
+- cat /etc/hosts
