@@ -1,4 +1,4 @@
-language: python
+language: perl
 
 sudo: required
 
@@ -9,4 +9,5 @@ group: edge
 install: echo nope
 
 script:
-- cat /etc/hosts
+- perlbrew --version
+- perlbrew list
