@@ -1,13 +1,19 @@
-language: perl
+language: bash
 
 sudo: required
 
 dist: trusty
 
-group: edge
+group: stable
+
+matrix:
+  include:
+  - language: __sugilite__
+  - language: __amethyst__
+  - language: __garnet__
+  - language: __connie__
 
 install: echo nope
 
 script:
-- perlbrew --version
-- perlbrew list
+- cat /etc/hosts
