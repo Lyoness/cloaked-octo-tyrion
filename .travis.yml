@@ -9,9 +9,25 @@ group: stable
 matrix:
   include:
   - language: __sugilite__
+    env: x=sugilite,stable
   - language: __amethyst__
+    env: x=amethyst,stable
   - language: __garnet__
+    env: x=garnet,stable
   - language: __connie__
+    env: x=connie,stable
+  - language: __sugilite__
+    group: edge
+    env: x=sugilite,edge
+  - language: __amethyst__
+    group: edge
+    env: x=amethyst,edge
+  - language: __garnet__
+    group: edge
+    env: x=garnet,edge
+  - language: __connie__
+    group: edge
+    env: x=connie,edge
 
 install: echo nope
 
