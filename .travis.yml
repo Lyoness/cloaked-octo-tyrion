@@ -1,4 +1,4 @@
-language: perl
+language: __sugilite__
 
 sudo: required
 
@@ -9,5 +9,4 @@ group: edge
 install: echo nope
 
 script:
-- perlbrew --version
-- perlbrew list
+- ls ~/virtualen*
