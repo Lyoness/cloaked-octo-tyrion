@@ -9,4 +9,8 @@ env:
 
 install: echo nope
 
-script: find /etc/apt -name '*.list' | while read -r f ; do echo "---> $f:" ; cat "${f}" ; done
+script:
+- find /etc/apt -name '*.list' | while read -r f ; do
+    echo "---> $f:" ; cat "${f}" ;
+  done
+- curl -sSL http://metadata.google.internal/computeMetadata/v1/instance/zone
