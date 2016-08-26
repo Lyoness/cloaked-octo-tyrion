@@ -13,6 +13,4 @@ script:
 - find /etc/apt -name '*.list' | while read -r f ; do
     echo "---> $f:" ; cat "${f}" ;
   done
-- curl -sSL
-    -H 'Metadata-Flavor:Google'
-    "http://metadata.google.internal/computeMetadata/v1/instance/zone"
+- docker run -v "${PWD}:/app" ubuntu:14.04 /app/munge-apt-sources

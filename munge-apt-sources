@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -o errexit
+
+main() {
+  set -o xtrace
+  : "${TMPDIR:=/var/tmp}"
+  : "${APT_SOURCES_LIST:=/etc/apt/sources.list}"
+
+  local full_zone
+  full_zone="$(__full_zone)"
+
+  if [[ -z "${full_zone}" ]]; then
+    echo "No zone found; skipping"
+    exit 0
+  fi
+
+  local zone
+  zone="$(echo "${full_zone}" | awk -F/ '{ print $NF }' | cut -d- -f1-2)"
+
+  sed \
+    -e "/^deb.*archive\.ubuntu\.com/s,/archive\.ubuntu\.com/,/${zone}.gce.archive.ubuntu.com/,g" \
+    "${APT_SOURCES_LIST}" >"${TMPDIR}/munged-apt-sources.list"
+
+  diff -u "${TMPDIR}/munged-apt-sources.list" "${APT_SOURCES_LIST}"
+  if [[ -z "${NOOP}" ]]; then
+    mv -v "${TMPDIR}/munged-apt-sources.list" "${APT_SOURCES_LIST}"
+  fi
+}
+
+__full_zone() {
+  if [[ "${FAKE_METADATA}" ]]; then
+    echo 'projects/107105770214/zones/us-central1-b'
+    return
+  fi
+
+  curl -sSL \
+    -H 'Metadata-Flavor: Google' \
+    "http://metadata.google.internal/computeMetadata/v1/instance/zone"
+}
+
+main "${@}"
