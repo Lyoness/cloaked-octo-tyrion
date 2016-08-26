@@ -4,9 +4,12 @@ sudo: required
 
 dist: precise
 
-install:
-- sudo apt-get update -yqq
-- sudo apt-get install -y postgresql-9.5-server
+addons:
+  apt:
+    sources:
+    - precise-pgdg-9.5
+    packages:
+    - postgresql-9.5
 
 script:
 - psql -l
