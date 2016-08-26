@@ -1,54 +1,14 @@
-language: __sugilite__
+language: ruby
 
 sudo: required
 
-dist: trusty
+dist: precise
 
-env:
-  global: STACK=sugilite
+install:
+- sudo apt-get update -yqq
+- sudo apt-get install -y postgresql-9.5-server
 
-matrix:
-  include:
-  - language: __connie__
-    dist: trusty
-    env: STACK=connie
-  - language: __amethyst__
-    dist: trusty
-    env: STACK=amethyst
-  - language: __garnet__
-    dist: trusty
-    env: STACK=garnet
-  - language: android
-    dist: precise
-    env: STACK=android
-  - language: erlang
-    dist: precise
-    env: STACK=erlang
-  - language: go
-    dist: precise
-    env: STACK=go
-  - language: haskell
-    dist: precise
-    env: STACK=haskell
-  - language: jvm
-    dist: precise
-    env: STACK=jvm
-  - language: nodejs
-    dist: precise
-    env: STACK=nodejs
-  - language: perl
-    dist: precise
-    env: STACK=perl
-  - language: php
-    dist: precise
-    env: STACK=php
-  - language: python
-    dist: precise
-    env: STACK=python
-  - language: ruby
-    dist: precise
-    env: STACK=ruby
-
-install: echo nope
-
-script: echo also nope
+script:
+- psql -l
+- cat /etc/postgresql/9.5/main/postgresql.conf
+- cat /etc/postgresql/9.5/main/postgresql.conf | bzip2 | base64
