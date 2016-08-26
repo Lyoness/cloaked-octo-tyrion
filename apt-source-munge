@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+set -o errexit
+
+main() {
+  set -o xtrace
+  : "${TMPDIR:=/var/tmp}"
+  : "${APT_SOURCES_LIST:=/etc/apt/sources.list}"
+  : "${APT_SOURCE_MUNGE_TO:=canonical}"
+  : "${DOCKER_HOST_INFRA:=notset}"
+
+  local mirror_prefix
+  mirror_prefix="$(__mirror_prefix_${DOCKER_HOST_INFRA})"
+
+  __apt_source_munge_to_${APT_SOURCE_MUNGE_TO} "${mirror_prefix}"
+
+  diff -u "${TMPDIR}/munged-apt-sources.list" "${APT_SOURCES_LIST}"
+  if [[ -z "${NOOP}" ]]; then
+    mv -v "${TMPDIR}/munged-apt-sources.list" "${APT_SOURCES_LIST}"
+  fi
+}
+
+__apt_source_munge_to_mirror() {
+  sed \
+    -e "/^deb/s,/us\.archive\.ubuntu\.com/,/${1}.archive.ubuntu.com/,g" \
+    "${APT_SOURCES_LIST}" >"${TMPDIR}/munged-apt-sources.list"
+}
+
+__apt_source_munge_to_canonical() {
+  sed \
+    -e "/^deb/s,/.+\.archive\.ubuntu\.com/,/us.archive.ubuntu.com/,g" \
+    "${APT_SOURCES_LIST}" >"${TMPDIR}/munged-apt-sources.list"
+}
+
+__mirror_prefix_gce() {
+  echo 'us-central1.gce'
+}
+
+__mirror_prefix_ec2() {
+  echo 'us-east-1.ec2'
+}
+
+__mirror_prefix_notset() {
+  echo 'us'
+}
+
+main "${@}"
