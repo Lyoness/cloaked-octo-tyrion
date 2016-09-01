@@ -16,4 +16,5 @@ install: echo nope
 script:
 - pear version
 - pear config-show
-- find ~/ -iname '*pear*'
+- cat /home/travis/.phpenv/versions/${TRAVIS_PHP_VERSION}/etc/pear.conf
+- cat /home/travis/.pearrc
