@@ -18,3 +18,5 @@ script:
 - pear config-show
 - cat /home/travis/.phpenv/versions/${TRAVIS_PHP_VERSION}/etc/pear.conf
 - cat /home/travis/.pearrc
+- mv -v /home/travis/.pearrc{,.disabled}
+- pear config-show
