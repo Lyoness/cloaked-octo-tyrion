@@ -12,4 +12,13 @@ sudo: false
 dist: trusty
 group: beta
 install: curl -vvvv http://www.google.com
-script: echo script
+script:
+- curl -vvvvLO https://s3.amazonaws.com/travis-python-archives/binaries/ubuntu/14.04/x86_64/python-2.6.tar.bz2
+- sha256sum python-2.6.tar.bz2
+- tar -tjf python-2.6.tar.bz2
+- curl -vvvvLO https://s3.amazonaws.com/travis-python-archives/binaries/ubuntu/14.04/x86_64/python-3.4.tar.bz2
+- sha256sum python-3.4.tar.bz2
+- tar -tjf python-3.4.tar.bz2
+- curl -vvvvLO https://s3.amazonaws.com/travis-python-archives/binaries/ubuntu/14.04/x86_64/pypy-4.0.1.tar.bz2
+- sha256sum pypy-4.0.1.tar.bz2
+- tar -tjf pypy-4.0.1.tar.bz2
