@@ -11,7 +11,7 @@ python:
 sudo: false
 dist: trusty
 group: beta
-install: curl -vvvv http://www.google.com
+install: echo nope
 script:
 - curl -vvvvLO https://s3.amazonaws.com/travis-python-archives/binaries/ubuntu/14.04/x86_64/python-2.6.tar.bz2
 - sha256sum python-2.6.tar.bz2
