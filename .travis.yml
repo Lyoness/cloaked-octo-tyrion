@@ -1,14 +1,15 @@
-language: go
-go:
-- 1
-- 1.x
-- 1.1.x
-- 1.2.x
-- 1.3.x
-- 1.4.x
-- 1.5.x
-- 1.6.x
-- 1.7.x
+language: python
+python:
+- 2.6
+- 2.7
+- 3.3
+- 3.4
+- 3.5
+- pypy-2.6.1
+- pypy-4.0.1
+- pypy-5.1
 sudo: false
 dist: trusty
 group: beta
+install: curl -vvvv http://www.google.com
+script: echo script
