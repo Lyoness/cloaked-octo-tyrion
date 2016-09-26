@@ -13,9 +13,4 @@ python:
 - pypy-5.1
 install: echo nope
 script:
-- curl -vvvvLO https://s3.amazonaws.com/travis-python-archives/binaries/ubuntu/14.04/x86_64/python-2.6.tar.bz2
-- file python-2.6.tar.bz2
-- curl -vvvvLO https://s3.amazonaws.com/travis-python-archives/binaries/ubuntu/14.04/x86_64/python-3.4.tar.bz2
-- file python-3.4.tar.bz2
-- curl -vvvvLO https://s3.amazonaws.com/travis-python-archives/binaries/ubuntu/14.04/x86_64/pypy-4.0.1.tar.bz2
-- file pypy-4.0.1.tar.bz2
+- python -m this
