@@ -1,3 +1,6 @@
 language: go
-sudo: false
-script: cat /etc/apt/sources.list
+sudo: required
+dist: trusty
+script:
+- sudo apt-get update -yqq
+- sudo apt-get install -yqq curl parallel-ssh
