@@ -12,3 +12,26 @@ go:
 sudo: false
 dist: trusty
 group: beta
+env:
+- HAI=0
+- HAI=1
+- HAI=2
+- HAI=3
+- HAI=4
+- HAI=5
+- HAI=6
+- HAI=7
+- HAI=8
+- HAI=9
+- HAI=10
+- HAI=11
+- HAI=12
+- HAI=13
+- HAI=14
+- HAI=15
+- HAI=16
+- HAI=17
+- HAI=18
+- HAI=19
+after_success:
+- go run ./whatever.go
