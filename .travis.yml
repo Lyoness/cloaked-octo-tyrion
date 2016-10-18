@@ -1,54 +1,9 @@
-language: __sugilite__
-
+language: ruby
 sudo: required
-
 dist: trusty
-
-env:
-  global: STACK=sugilite
-
-matrix:
-  include:
-  - language: __connie__
-    dist: trusty
-    env: STACK=connie
-  - language: __amethyst__
-    dist: trusty
-    env: STACK=amethyst
-  - language: __garnet__
-    dist: trusty
-    env: STACK=garnet
-  - language: android
-    dist: precise
-    env: STACK=android
-  - language: erlang
-    dist: precise
-    env: STACK=erlang
-  - language: go
-    dist: precise
-    env: STACK=go
-  - language: haskell
-    dist: precise
-    env: STACK=haskell
-  - language: jvm
-    dist: precise
-    env: STACK=jvm
-  - language: nodejs
-    dist: precise
-    env: STACK=nodejs
-  - language: perl
-    dist: precise
-    env: STACK=perl
-  - language: php
-    dist: precise
-    env: STACK=php
-  - language: python
-    dist: precise
-    env: STACK=python
-  - language: ruby
-    dist: precise
-    env: STACK=ruby
-
-install: echo nope
-
-script: echo also nope
+services:
+- mysql
+install: echo nah
+script:
+- ls -l /etc/init/
+- ls -l /etc/init.d/
