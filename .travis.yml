@@ -2,6 +2,8 @@ language: __sugilite__
 
 sudo: required
 
+group: dev
+
 dist: trusty
 
 matrix:
