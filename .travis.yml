@@ -15,4 +15,4 @@ matrix:
 install: echo nope
 
 script:
-- sudo iptables -L
+- sudo iptables-save
