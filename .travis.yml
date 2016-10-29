@@ -6,4 +6,4 @@ dist: precise
 install: echo nope
 
 script:
-- rvm list
+- rvm list strings
