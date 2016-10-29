@@ -6,8 +6,11 @@ dist: trusty
 matrix:
   include:
   - group: edge
+    env: GROUP=edge
   - group: dev
+    env: GROUP=dev
   - group: stable
+    env: GROUP=stable
 
 install: echo nope
 
