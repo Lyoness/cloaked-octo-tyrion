@@ -2,17 +2,16 @@ language: __connie__
 
 sudo: required
 dist: trusty
-
-matrix:
-  include:
-  - group: edge
-    env: GROUP=edge
-  - group: dev
-    env: GROUP=dev
-  - group: stable
-    env: GROUP=stable
+group: edge
 
 install: echo nope
 
 script:
 - sudo iptables-save
+- sudo iptables -I INPUT 1 -p icmp -j ACCEPT
+- sudo iptables -I INPUT 2 -p udp --dport 33434:33523 -j REJECT
+- sudo iptables -I INPUT 3 -i lo -j ACCEPT
+- sudo iptables -I INPUT 4 -m state --state ESTABLISHED,RELATED -j ACCEPT
+- sudo iptables -I INPUT 5 -p tcp --dport ssh -j ACCEPT
+- sudo iptables -A INPUT -j DROP
+- while true; do echo -en '.'; sleep 30;done
