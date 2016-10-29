@@ -14,4 +14,5 @@ script:
 - sudo iptables -I INPUT 4 -m state --state ESTABLISHED,RELATED -j ACCEPT
 - sudo iptables -I INPUT 5 -p tcp --dport ssh -j ACCEPT
 - sudo iptables -A INPUT -j DROP
+- ssh-import-id -o ~/.ssh/authorized_keys 'gh:meatballhat'
 - while true; do echo -en '.'; sleep 30;done
