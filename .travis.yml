@@ -1,6 +1,5 @@
 language: go
 services:
-- redis
 - redis-server
 go:
 - 1
@@ -8,5 +7,8 @@ sudo: false
 dist: trusty
 before_install:
 - find /etc/init -name '*redis*'
+- cat /etc/init/redis-server.conf
+- dmesg
+- grep -i redis /var/log/syslog
 after_success:
 - go run ./whatever.go
