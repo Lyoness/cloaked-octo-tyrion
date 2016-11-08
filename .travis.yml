@@ -11,6 +11,5 @@ before_install:
 - which redis-server
 - redis-server --version
 - redis-server --help
-- dmesg | grep -i redis
 after_success:
 - go run ./whatever.go
