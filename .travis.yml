@@ -3,7 +3,7 @@ services:
 - redis-server
 go:
 - 1
-sudo: false
+# sudo: false
 dist: trusty
 before_install:
 - find /etc/init -name '*redis*'
