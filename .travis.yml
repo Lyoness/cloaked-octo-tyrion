@@ -8,7 +8,6 @@ dist: trusty
 before_install:
 - find /etc/init -name '*redis*'
 - cat /etc/init/redis-server.conf
-- dmesg
-- grep -i redis /var/log/syslog
+- dmesg | grep -i redis
 after_success:
 - go run ./whatever.go
