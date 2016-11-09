@@ -3,12 +3,7 @@ sudo: required
 dist: trusty
 group: dev
 addons:
-  postgresql:
-  - 9.2
-  - 9.3
-  - 9.4
-  - 9.5
-  - 9.6
+  postgresql: '9.6'
 install: echo nope
 script:
 - psql --version
