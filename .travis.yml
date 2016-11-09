@@ -1,6 +1,7 @@
 language: __amethyst__
 sudo: required
 dist: trusty
+group: dev
 addons:
   postgresql:
   - 9.2
