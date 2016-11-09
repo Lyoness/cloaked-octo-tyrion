@@ -2,9 +2,9 @@ language: __amethyst__
 sudo: required
 dist: trusty
 group: dev
-addons:
-  postgresql: '9.6'
+services:
+- mysql
 install: echo nope
 script:
-- psql --version
-- psql -c 'select version();' </dev/null
+- mysql -V
+- echo 'SHOW VARIABLES LIKE "%version%";' | mysql
