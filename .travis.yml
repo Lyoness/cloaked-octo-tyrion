@@ -1,8 +1,7 @@
 language: go
 services:
 - redis-server
-go:
-- 1
+go: 1
 sudo: false
 dist: trusty
 before_install:
