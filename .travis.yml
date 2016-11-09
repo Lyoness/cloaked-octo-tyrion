@@ -9,7 +9,7 @@ before_install:
 - find /etc/init -name '*redis*'
 - cat /etc/init/redis-server.conf
 - which redis-server
-- redis-server --version
-- redis-server --help
+- redis-server --version || true
+- redis-server --help || true
 after_success:
 - go run ./whatever.go
