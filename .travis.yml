@@ -5,5 +5,6 @@ install: echo nope
 script:
 - stat $HOME
 - touch $HOME/testing
+- cat ~/.travis_ci_environment.yml
 after_success:
 - go run ./whatever.go
