@@ -1,3 +1,5 @@
 language: go
 sudo: false
-script: cat /etc/apt/sources.list
+dist: trusty
+install: echo nah
+script: git --version
