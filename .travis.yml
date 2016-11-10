@@ -1,7 +1,8 @@
 language: go
 go: 1
-sudo: false
+sudo: required
 dist: trusty
+group: edge
 addons:
   postgresql: '9.6'
 services:
