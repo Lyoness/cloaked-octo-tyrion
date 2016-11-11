@@ -3,13 +3,7 @@ go: 1
 sudo: required
 dist: trusty
 group: edge
-addons:
-  postgresql: '9.6'
-services:
-- redis-server
-script:
-- redis-cli INFO
-- psql --version
-- psql -c 'select version();' </dev/null
+install: echo nah
+script: env | grep -E '^(USER|TERM|SHELL)'
 after_success:
 - go run ./whatever.go
