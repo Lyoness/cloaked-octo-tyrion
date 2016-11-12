@@ -4,9 +4,7 @@ matrix:
   include:
   - dist: trusty
   - dist: precise
-install:
-- echo thing one
-- echo thing two
+install: echo nah
 script: 
-- ./some-external-thing
-- ./another-external-thing-maybe
+- ./some-external-thing &>/dev/null
+- ./another-external-thing-maybe &>/dev/null
