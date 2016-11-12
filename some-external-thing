@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo doing a thing in $0
+for i in {0..19}; do
+  echo "1 plus $i is $((1 + $i))?" &
+done
