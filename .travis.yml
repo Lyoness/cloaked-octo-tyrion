@@ -32,5 +32,5 @@ env:
 - HAI=17
 - HAI=18
 - HAI=19
-after_success:
-- go run ./whatever.go
+install: echo hai
+script: uname -a
