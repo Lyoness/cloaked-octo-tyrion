@@ -1,7 +1,7 @@
-language: __amethyst__
+language: python
 sudo: required
 dist: trusty
-group: dev
+group: edge
 services:
 - mysql
 install: echo nope
