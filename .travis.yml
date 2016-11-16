@@ -1,7 +1,7 @@
 language: python
-sudo: required
+sudo: false
 dist: trusty
-group: edge
+# group: edge
 services:
 - mysql
 install: echo nope
