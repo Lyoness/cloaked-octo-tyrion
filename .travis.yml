@@ -2,8 +2,7 @@ language: erlang
 sudo: required
 dist: trusty
 group: dev
-install:
-- source /opt/jdk_switcher/jdk_switcher.sh
+install: echo hai
 script:
 - ls -l /opt/jdk_switcher/
 - ls -l /etc/profile.d/
