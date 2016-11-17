@@ -10,7 +10,7 @@ script:
 - cat /etc/profile.d/travis-java.sh
 - echo $JAVA_HOME
 - type jdk_switcher | head -1
-- jdk_switcher home openjdk8
+- jdk_switcher home default
 - jdk_switcher use default
 - java -version
 - javac Hello.java
