@@ -13,3 +13,4 @@ script:
   fi
 - ls -l /etc/profile.d/pyenv.sh
 - cat /etc/profile.d/pyenv.sh
+- pyenv versions
