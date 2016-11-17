@@ -11,5 +11,5 @@ script:
 - redis-cli INFO
 - psql --version
 - psql -c 'select version();' </dev/null
-after_success:
-- go run ./whatever.go
+- sudo apt update -y
+- sudo apt search postgis
