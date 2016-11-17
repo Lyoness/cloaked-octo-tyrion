@@ -6,6 +6,7 @@ install: echo nope
 script:
 - ls -l /opt/jdk_switcher/
 - ls -l /etc/profile.d/
+- cat /etc/profile.d/travis-java.sh
 - echo $JAVA_HOME
 - type jdk_switcher | head -1
 - jdk_switcher home openjdk8
