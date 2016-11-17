@@ -11,3 +11,7 @@ script:
 - echo $JAVA_HOME
 - type jdk_switcher | head -1
 - jdk_switcher home openjdk8
+- jdk_switcher use default
+- java -version
+- javac Hello.java
+- java Hello
