@@ -52,5 +52,6 @@ matrix:
 install: echo nope
 script:
 - echo "PATH=$PATH"
+- echo "$PATH" | if grep '::' ;then echo DOUBLE COLON WHAT DOES IT MEAN; fi
 - ls -l /etc/profile.d/pyenv.sh
 - cat /etc/profile.d/pyenv.sh
