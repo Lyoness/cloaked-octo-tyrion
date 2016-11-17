@@ -2,6 +2,6 @@ language: python
 sudo: false
 dist: precise
 services:
-- mongod
+- mongodb
 install: echo nope
 script: echo nah
