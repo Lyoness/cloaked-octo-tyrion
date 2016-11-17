@@ -1,18 +1,8 @@
 language: python
-
 sudo: required
-
 group: edge
-
-dist: precise
-
-matrix:
-  include:
-  - dist: trusty
-    language: universe
-
+dist: trusty
+services:
+- mongod
 install: echo nope
-
-script:
-- sudo service mongod start || echo "OH NO $?"
-- sudo service mongod stop || echo "OH NO $?"
+script: echo nah
