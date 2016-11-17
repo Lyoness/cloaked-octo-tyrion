@@ -2,7 +2,7 @@ language: python
 sudo: required
 dist: trusty
 group: dev
-python: 3.5
+python: 3.4
 install: echo nope
 script:
 - echo "PATH=$PATH"
