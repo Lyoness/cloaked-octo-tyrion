@@ -6,6 +6,6 @@ group: edge
 script:
 - sudo apt update -y
 - sudo apt search openjdk
-- sudo apt remove -y openjdk-8-jdk
+- sudo apt purge -y openjdk-8-jdk
 - sudo apt update -y
 - sudo apt install -y openjdk-8-jdk
