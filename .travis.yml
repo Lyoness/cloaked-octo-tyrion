@@ -3,13 +3,6 @@ go: 1
 sudo: required
 dist: trusty
 group: edge
-addons:
-  postgresql: '9.6'
-services:
-- redis-server
 script:
-- redis-cli INFO
-- psql --version
-- psql -c 'select version();' </dev/null
 - sudo apt update -y
-- sudo apt search postgis
+- sudo apt search openjdk
