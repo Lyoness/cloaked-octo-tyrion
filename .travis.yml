@@ -51,4 +51,4 @@ matrix:
 
 install: echo nope
 script:
-- echo 'scale=2; (3.14159 * 13.1) ^ 2' | bc
+- git --version
