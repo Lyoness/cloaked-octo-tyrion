@@ -54,9 +54,3 @@ script:
 - find /usr/bin /usr/local/bin -name git
 - which git
 - git --version
-- sudo apt-add-repository -y ppa:git-core/ppa
-- sudo apt-get update -y
-- sudo apt search git
-- sudo apt-get upgrade -y git
-- which git
-- git --version
