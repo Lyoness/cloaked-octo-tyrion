@@ -51,4 +51,6 @@ matrix:
 
 install: echo nope
 script:
+- find /usr/bin /usr/local/bin -name git
+- which git
 - git --version
