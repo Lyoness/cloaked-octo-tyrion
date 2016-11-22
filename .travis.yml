@@ -50,6 +50,6 @@ matrix:
     env: STACK=ruby
 
 install:
-- rvm use 2.3 --install --fuzzy
+- rvm use 2.2 --install --fuzzy
 script:
 - ruby -v
