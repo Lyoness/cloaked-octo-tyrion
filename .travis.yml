@@ -2,7 +2,7 @@ language: __sugilite__
 
 sudo: required
 dist: trusty
-group: stable
+group: dev
 
 matrix:
   include:
@@ -51,6 +51,4 @@ matrix:
 
 install: echo nope
 script:
-- for f in /.packer-env/*; do echo $f; cat $f; done
-- cat /.job-board-register.yml
-- cat /.node-attributes.yml
+- if yarn --version; then which yarn; else echo nah; fi
