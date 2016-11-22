@@ -50,6 +50,7 @@ matrix:
     env: STACK=ruby
 
 install:
+- nvm install 6.9.1
 - nvm use 6.9.1
 script:
 - if yarn --version; then which yarn; else echo nah; fi
