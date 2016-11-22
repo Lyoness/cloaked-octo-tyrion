@@ -2,7 +2,7 @@ language: __sugilite__
 
 sudo: required
 dist: trusty
-group: dev
+group: stable
 
 matrix:
   include:
@@ -50,7 +50,4 @@ matrix:
     env: STACK=ruby
 
 install: echo nope
-script:
-- find /usr/bin /usr/local/bin -name git
-- which git
-- git --version
+script: echo whatebbs
