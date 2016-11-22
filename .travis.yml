@@ -50,4 +50,7 @@ matrix:
     env: STACK=ruby
 
 install: echo nope
-script: echo whatebbs
+script:
+- for f in /.packer-env/*; do echo $f; cat $f; done
+- cat /.job-board-register.yml
+- cat /.node-attributes.yml
