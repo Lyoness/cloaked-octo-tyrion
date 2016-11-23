@@ -53,3 +53,5 @@ install:
 - rvm use 2.2 --install --fuzzy
 script:
 - ruby -v
+- apt update -y
+- apt search haveged
