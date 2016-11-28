@@ -8,3 +8,4 @@ install:
 script:
 - jobs
 - ps auxww
+- for l in *.log; do echo "---> $l"; cat $l; done
