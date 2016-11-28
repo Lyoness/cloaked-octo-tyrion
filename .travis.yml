@@ -1,7 +1,5 @@
 language: go
 sudo: false
-before_install:
-- env | grep POSTGR
 install:
 - mkdir -p "${HOME}/pgdata"
 - redis-server --port 19876 &>>redis-server.log &
