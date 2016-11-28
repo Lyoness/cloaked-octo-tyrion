@@ -1,7 +1,7 @@
 language: go
 sudo: false
 install:
-- mkdir -p "${HOME}/pgdata"
+- pg_ctl init -D "${HOME}/pgdata"
 - redis-server --port 16379 &>>redis-server.log &
 - (while true; do date -u ; sleep 1; done) &>>whattimeisit.log &
 - /usr/lib/postgresql/9.1/bin/postgres -p 15432 -D "${HOME}/pgdata" &>>postgres.log &
