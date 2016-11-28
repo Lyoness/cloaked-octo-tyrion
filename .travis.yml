@@ -1,3 +1,7 @@
 language: go
 sudo: false
-script: cat /etc/apt/sources.list
+script:
+- redis-server --port 19876 &>>redis-server.log &
+- (while true; do date -u ; sleep 1; done) &>>whattimeisit.log &
+- jobs
+- ps auxww
