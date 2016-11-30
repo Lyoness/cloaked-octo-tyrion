@@ -5,4 +5,6 @@ services:
 - mysql-5.6
 script:
 - cat ~/.my.cnf
+- cat /etc/hhvm/php.ini
+- cat ~/.phpenv/versions/5.6*/etc/php.ini
 - "mysql -e 'SHOW VARIABLES LIKE \"%version%\";' || true"
