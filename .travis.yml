@@ -4,6 +4,7 @@ dist: trusty
 services:
 - mysql-5.6
 script:
+- git --version
 - cat ~/.my.cnf
 - echo "'$(grep ^socket ~/.my.cnf | cut -d= -f2 | tr -d ' ')'"
 - cat /etc/hhvm/php.ini
