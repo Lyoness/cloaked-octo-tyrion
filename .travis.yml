@@ -1,6 +1,7 @@
 language: php
 php: hhvm
-sudo: false
+group: edge
+sudo: required
 dist: trusty
 services:
 - mysql-5.6
