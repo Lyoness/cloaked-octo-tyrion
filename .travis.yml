@@ -1,4 +1,5 @@
 language: php
+php: hhvm
 sudo: false
 dist: trusty
 services:
