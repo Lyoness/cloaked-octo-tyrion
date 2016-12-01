@@ -1,57 +1,15 @@
-language: __sugilite__
-
+language: bash
 sudo: required
 dist: trusty
-group: dev
-
+group: stable
+env: GROUP=stable
 matrix:
   include:
-  - language: __sugilite__
-    dist: trusty
-    env: STACK=sugilite
-  - language: __connie__
-    dist: trusty
-    env: STACK=connie
-  - language: __amethyst__
-    dist: trusty
-    env: STACK=amethyst
-  - language: __garnet__
-    dist: trusty
-    env: STACK=garnet
-  - language: android
-    dist: precise
-    env: STACK=android
-  - language: erlang
-    dist: precise
-    env: STACK=erlang
-  - language: go
-    dist: precise
-    env: STACK=go
-  - language: haskell
-    dist: precise
-    env: STACK=haskell
-  - language: jvm
-    dist: precise
-    env: STACK=jvm
-  - language: nodejs
-    dist: precise
-    env: STACK=nodejs
-  - language: perl
-    dist: precise
-    env: STACK=perl
-  - language: php
-    dist: precise
-    env: STACK=php
-  - language: python
-    dist: precise
-    env: STACK=python
-  - language: ruby
-    dist: precise
-    env: STACK=ruby
+  - group: deprecated
+    env: GROUP=deprecated
 
 install:
-- rvm use 2.2 --install --fuzzy
+- echo nah
 script:
-- ruby -v
-- sudo apt update -y
-- sudo apt search haveged
+- sudo docker version
+- sudo docker run busybox echo hai
