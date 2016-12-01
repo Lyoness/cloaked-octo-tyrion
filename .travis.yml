@@ -1,11 +1,49 @@
-language: go
-go: 1
-sudo: required
-dist: trusty
-group: edge
+language: java
+jdk: oraclejdk8
+install: true
 script:
-- sudo apt update -y
-- sudo apt search openjdk
-- sudo apt purge -y openjdk-8-jdk
-- sudo apt update -y
-- sudo apt install -y openjdk-8-jdk
+- java -version
+- ls -l /usr/lib/jvm
+- "head -n 1000 /etc/default/jdk-switcher \"${HOME}/.jdk_switcherrc\" \"${JDK_SWITCHER_CONFIG}\" || true"
+- "jdk_switcher use oraclejdk8 || true"
+- "java -version || true"
+matrix:
+  include:
+    - env: "image=sudo trusty stable"
+      sudo: required
+      dist: trusty
+      group: stable
+    - env: "image=sudo trusty edge"
+      sudo: required
+      dist: trusty
+      group: edge
+    - env: "image=sudo trusty deprecated"
+      sudo: required
+      dist: trusty
+      group: deprecated
+    - env: "image=sudo precise stable"
+      sudo: required
+      dist: precise
+      group: stable
+    - env: "image=sudo precise edge"
+      sudo: required
+      dist: precise
+      group: edge
+    - env: "image=container trusty stable"
+      sudo: false
+      dist: trusty
+      group: stable
+    - env: "image=container trusty edge"
+      sudo: false
+      dist: trusty
+      group: edge
+    - env: "image=container precise stable"
+      sudo: false
+      dist: precise
+      group: stable
+    - env: "image=container precise edge"
+      sudo: false
+      dist: precise
+      group: edge
+notifications:
+  email: false
