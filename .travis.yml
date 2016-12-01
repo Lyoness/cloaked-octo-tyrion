@@ -1,10 +1,10 @@
 language: python
-sudo: false
+sudo: required
 dist: trusty
-# group: edge
 services:
 - mysql
 install: echo nope
 script:
+- find /etc/init /etc/init.d -name 'mysql*'
 - mysql -V
 - echo 'SHOW VARIABLES LIKE "%version%";' | mysql
