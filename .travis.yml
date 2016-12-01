@@ -4,7 +4,7 @@ install: true
 script:
 - java -version
 - ls -l /usr/lib/jvm
-- "head -n 1000 /etc/default/jdk-switcher \"${HOME}/.jdk_switcherrc\" \"${JDK_SWITCHER_CONFIG}\" || true"
+- sudo rm -fv /usr/lib/jvm/default-java
 - "jdk_switcher use oraclejdk8 || true"
 - "java -version || true"
 matrix:
@@ -29,21 +29,25 @@ matrix:
       sudo: required
       dist: precise
       group: edge
-    - env: "image=container trusty stable"
-      sudo: false
-      dist: trusty
-      group: stable
-    - env: "image=container trusty edge"
-      sudo: false
-      dist: trusty
-      group: edge
-    - env: "image=container precise stable"
-      sudo: false
+    - env: "image=sudo precise deprecated"
+      sudo: required
       dist: precise
-      group: stable
-    - env: "image=container precise edge"
-      sudo: false
-      dist: precise
-      group: edge
+      group: deprecated
+#     - env: "image=container trusty stable"
+#       sudo: false
+#       dist: trusty
+#       group: stable
+#     - env: "image=container trusty edge"
+#       sudo: false
+#       dist: trusty
+#       group: edge
+#     - env: "image=container precise stable"
+#       sudo: false
+#       dist: precise
+#       group: stable
+#     - env: "image=container precise edge"
+#       sudo: false
+#       dist: precise
+#       group: edge
 notifications:
   email: false
