@@ -9,7 +9,7 @@ matrix:
     env: GROUP=deprecated
 
 install:
-- echo nah
+- ps auxww | grep h[a]v
 script:
 - sudo docker version
 - sudo docker run busybox echo hai
