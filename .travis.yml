@@ -7,8 +7,8 @@ script:
 - sudo rm -fv /usr/lib/jvm/default-java
 - jdk_switcher use oraclejdk8
 - java -version
-- sudo service elasticsearch stop
-- sudo service elasticsearch start
+- sudo service elasticsearch stop || true
+- sudo service elasticsearch start || true
 matrix:
   include:
     - env: "image=sudo trusty stable"
