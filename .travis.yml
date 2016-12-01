@@ -99,4 +99,5 @@ matrix:
 install:
 - echo nah
 script:
+- git --version
 - cat ~/.travis*yml
