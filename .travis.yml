@@ -2,56 +2,101 @@ language: __sugilite__
 
 sudo: required
 dist: trusty
-group: dev
+group: stable
+env: STACK=sugilite GROUP=stable
 
 matrix:
   include:
   - language: __sugilite__
     dist: trusty
-    env: STACK=sugilite
+    group: deprecated
+    env: STACK=sugilite GROUP=deprecated
   - language: __connie__
     dist: trusty
-    env: STACK=connie
+    env: STACK=connie GROUP=stable
+  - language: __connie__
+    dist: trusty
+    group: deprecated
+    env: STACK=connie GROUP=deprecated
   - language: __amethyst__
     dist: trusty
-    env: STACK=amethyst
+    env: STACK=amethyst GROUP=stable
+  - language: __amethyst__
+    dist: trusty
+    group: deprecated
+    env: STACK=amethyst GROUP=deprecated
   - language: __garnet__
     dist: trusty
-    env: STACK=garnet
+    env: STACK=garnet GROUP=stable
+  - language: __garnet__
+    dist: trusty
+    group: deprecated
+    env: STACK=garnet GROUP=deprecated
   - language: android
     dist: precise
-    env: STACK=android
+    env: STACK=android GROUP=stable
+  - language: android
+    dist: precise
+    group: deprecated
+    env: STACK=android GROUP=deprecated
   - language: erlang
     dist: precise
-    env: STACK=erlang
+    env: STACK=erlang GROUP=stable
   - language: go
     dist: precise
-    env: STACK=go
+    group: deprecated
+    env: STACK=go GROUP=deprecated
   - language: haskell
     dist: precise
-    env: STACK=haskell
+    env: STACK=haskell GROUP=stable
+  - language: haskell
+    dist: precise
+    group: deprecated
+    env: STACK=haskell GROUP=deprecated
   - language: jvm
     dist: precise
-    env: STACK=jvm
+    env: STACK=jvm GROUP=stable
+  - language: jvm
+    dist: precise
+    group: deprecated
+    env: STACK=jvm GROUP=deprecated
   - language: nodejs
     dist: precise
-    env: STACK=nodejs
+    env: STACK=nodejs GROUP=stable
+  - language: nodejs
+    dist: precise
+    group: deprecated
+    env: STACK=nodejs GROUP=deprecated
   - language: perl
     dist: precise
-    env: STACK=perl
+    env: STACK=perl GROUP=stable
+  - language: perl
+    dist: precise
+    group: deprecated
+    env: STACK=perl GROUP=deprecated
   - language: php
     dist: precise
-    env: STACK=php
+    env: STACK=php GROUP=stable
+  - language: php
+    dist: precise
+    group: deprecated
+    env: STACK=php GROUP=deprecated
   - language: python
     dist: precise
-    env: STACK=python
+    env: STACK=python GROUP=stable
+  - language: python
+    dist: precise
+    group: deprecated
+    env: STACK=python GROUP=deprecated
   - language: ruby
     dist: precise
-    env: STACK=ruby
+    env: STACK=ruby GROUP=stable
+  - language: ruby
+    dist: precise
+    group: deprecated
+    env: STACK=ruby GROUP=deprecated
 
 install:
-- rvm use 2.2 --install --fuzzy
+- echo nah
 script:
-- ruby -v
-- sudo apt update -y
-- sudo apt search haveged
+- cat ~/.travis*yml
