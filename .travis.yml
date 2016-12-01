@@ -6,7 +6,9 @@ script:
 - ls -l /usr/lib/jvm
 - sudo rm -fv /usr/lib/jvm/default-java
 - jdk_switcher use oraclejdk8
+- ls -l /usr/lib/jvm
 - java -version
+- xvfb-run java -version
 - sudo service elasticsearch stop || true
 - sudo service elasticsearch start || true
 matrix:
