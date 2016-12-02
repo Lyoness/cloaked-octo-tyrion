@@ -1,12 +1,10 @@
 language: python
 sudo: required
 dist: trusty
-group: dev
 services:
 - mysql
 install: echo nope
 script:
-- find /etc/init /etc/init.d -name 'mysql*' | while read -r f; do echo "---> $f"; cat $f; done
 - mysql -V
 - echo 'SHOW VARIABLES LIKE "%version%";' | mysql
 - mysql -e 'create database myapp_test;'
