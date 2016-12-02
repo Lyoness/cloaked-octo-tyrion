@@ -1,9 +1,10 @@
-language: erlang
+language: c
 sudo: required
 dist: trusty
-group: dev
+group: edge
 install: echo hai
 script:
+- ls -l /usr/lib/jvm/
 - ls -l /opt/jdk_switcher/
 - ls -l /etc/profile.d/
 - cat /etc/profile.d/travis-java.sh
