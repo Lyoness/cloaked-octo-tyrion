@@ -1,7 +1,7 @@
 language: c
 sudo: required
 dist: trusty
-group: edge
+group: stable
 install: echo hai
 script:
 - java -version || true
