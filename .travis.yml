@@ -2,7 +2,7 @@ language: __sugilite__
 sudo: required
 dist: trusty
 group: stable
-env: STACK=sugilite GROUP=stable PYTHONPATH="/usr/lib/python2.7/dist-packages:$PYTHONPATH" CQLSH_PORT=9200
+env: STACK=sugilite GROUP=stable
 install:
 - sudo apt-add-repository -y 'deb http://www.apache.org/dist/cassandra/debian 39x main'
 - curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
