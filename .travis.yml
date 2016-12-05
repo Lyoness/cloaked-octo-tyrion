@@ -13,6 +13,9 @@ install:
 script:
 - source ./travis-cassandra.sh
 - find /etc -name 'cassandra*yml' | while read -r f; do echo "---> $f"; cat $f; done
+- which cqlsh
+- file $(which cqlsh)
 - cqlsh --version
 - cqlsh --help
 - cqlsh localhost --debug -e quit
+- base64 < $(which cqlsh)
