@@ -10,7 +10,7 @@ install:
 - sudo apt-get install -y cassandra cassandra-tools
 - sudo service cassandra start
 script:
-- find /usr/lib /usr/local/lib -name cqlshlib
+- source ./travis-cassandra.sh
 - cqlsh --version
 - cqlsh --help
 - cqlsh --debug -e quit
