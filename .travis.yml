@@ -19,3 +19,5 @@ script:
 - cqlsh --version
 - cqlsh --help
 - cqlsh localhost --debug -e quit
+- which python
+- ls -l /usr/bin | grep python
