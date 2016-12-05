@@ -7,7 +7,7 @@ install:
 - sudo apt-add-repository -y 'deb http://www.apache.org/dist/cassandra/debian 39x main'
 - curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
 - sudo apt-get update -y
-- sudo apt-get install -y cassandra
+- sudo apt-get install -y cassandra cassandra-tools
 script:
 - cqlsh --version
 - cqlsh --debug -e quit
