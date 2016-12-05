@@ -14,4 +14,4 @@ script:
 - source ./travis-cassandra.sh
 - cqlsh --version
 - cqlsh --help
-- cqlsh --debug -e quit localhost
+- cqlsh localhost --debug -e quit
