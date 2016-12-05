@@ -8,6 +8,7 @@ install:
 - curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
 - sudo apt-get update -y
 - sudo apt-get install -y cassandra cassandra-tools
+- sudo service cassandra start
 script:
 - find /usr/lib /usr/local/lib -name cqlshlib
 - cqlsh --version
