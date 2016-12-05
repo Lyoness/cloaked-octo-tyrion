@@ -12,6 +12,7 @@ install:
 - ps auxww | grep -i cassandra
 script:
 - source ./travis-cassandra.sh
+- find /etc -name 'cassandra*yml' | while read -r f; do echo "---> $f"; cat $f; done
 - cqlsh --version
 - cqlsh --help
 - cqlsh localhost --debug -e quit
