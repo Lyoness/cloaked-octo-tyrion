@@ -2,7 +2,7 @@ language: __sugilite__
 sudo: required
 dist: trusty
 group: stable
-env: STACK=sugilite GROUP=stable PYTHONPATH="/usr/lib/python2.7/dist-packages:$PYTHONPATH"
+env: STACK=sugilite GROUP=stable PYTHONPATH="/usr/lib/python2.7/dist-packages:$PYTHONPATH" CQLSH_PORT=9200
 install:
 - sudo apt-add-repository -y 'deb http://www.apache.org/dist/cassandra/debian 39x main'
 - curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
@@ -10,6 +10,7 @@ install:
 - sudo apt-get install -y cassandra cassandra-tools
 - sudo service cassandra start
 script:
+- netstat -a | grep TCP
 - source ./travis-cassandra.sh
 - cqlsh --version
 - cqlsh --help
