@@ -19,3 +19,4 @@ script:
 - cqlsh --help
 - cqlsh localhost --debug -e quit
 - base64 < $(which cqlsh)
+- cat /usr/bin/cqlsh.py
