@@ -9,5 +9,6 @@ install:
 - sudo apt-get update -y
 - sudo apt-get install -y cassandra cassandra-tools
 script:
+- find /usr/lib /usr/local/lib -name cqlshlib
 - cqlsh --version
 - cqlsh --debug -e quit
