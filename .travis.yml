@@ -12,4 +12,5 @@ install:
 script:
 - find /usr/lib /usr/local/lib -name cqlshlib
 - cqlsh --version
+- cqlsh --help
 - cqlsh --debug -e quit
