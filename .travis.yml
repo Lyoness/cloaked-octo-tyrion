@@ -1,4 +1,8 @@
 language: haskell
 sudo: false
+ghc:
+- 7.8.4
+- 7.8
+- 7
 install: echo nah
 script: ls -l /usr/local/ghc
