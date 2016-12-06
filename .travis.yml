@@ -1,7 +1,7 @@
 language: __amethyst__
 sudo: required
 dist: trusty
-group: dev
+# group: dev
 install: echo hai
 script:
 - java -version || true
