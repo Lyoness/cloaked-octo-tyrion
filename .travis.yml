@@ -1,3 +1,4 @@
 language: haskell
 sudo: false
+install: echo nah
 script: ls -l /usr/local/ghc
