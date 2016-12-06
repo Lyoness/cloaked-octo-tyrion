@@ -1,25 +1,8 @@
-language: __garnet__
+language: java
 sudo: required
-dist: trusty
-# group: dev
-install: echo hai
 script:
-- java -version || true
-- gradle --version || true
-- lein --version || true
-- mvn --version || true
-- ant -version || true
-- javac Hello.java || true
-- java Hello || true
-- rm -vf Hello.class
-- ls -l /usr/lib/jvm/
-- ls -l /opt/jdk_switcher/
-- ls -l /etc/profile.d/
-- cat /etc/profile.d/travis-java.sh
+- java -version
 - echo $JAVA_HOME
 - type jdk_switcher | head -1
-- jdk_switcher home default
-- jdk_switcher use default
-- java -version
-- javac Hello.java
-- java Hello
+- ls -la ~/ | grep jdk || true
+- ls -la /opt | grep jdk || true
