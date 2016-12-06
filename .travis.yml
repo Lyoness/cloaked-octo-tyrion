@@ -21,3 +21,4 @@ script:
 - cqlsh localhost --debug -e quit
 - which python
 - ls -l /usr/bin | grep python
+- base64 < /usr/share/travis/system_info.json
