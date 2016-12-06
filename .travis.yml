@@ -1,7 +1,9 @@
 language: java
 sudo: required
-dist: trusty
+jdk: oraclejdk7
 script:
+- echo "${PATH}" | tr ':' '\n'
+- which java
 - java -version
 - echo $JAVA_HOME
 - type jdk_switcher | head -1
