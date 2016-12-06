@@ -8,7 +8,7 @@ script:
 - gradle --version || true
 - lein --version || true
 - mvn --version || true
-- ant --version || true
+- ant -version || true
 - javac Hello.java || true
 - java Hello || true
 - rm -vf Hello.class
