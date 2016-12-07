@@ -3,6 +3,7 @@ sudo: required
 jdk: oraclejdk7
 script:
 - echo "${PATH}" | tr ':' '\n'
+- grep -l JAVA_HOME /etc/profile.d/* || true
 - which java
 - java -version
 - echo $JAVA_HOME
