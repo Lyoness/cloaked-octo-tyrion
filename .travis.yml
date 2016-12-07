@@ -1,6 +1,6 @@
 language: java
 sudo: required
-jdk: oraclejdk7
+# jdk: oraclejdk7
 script:
 - echo "${PATH}" | tr ':' '\n'
 - for f in $(grep -l JAVA_HOME /etc/profile.d/*); do echo "---> $f"; cat $f; done
