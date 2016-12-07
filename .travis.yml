@@ -12,3 +12,4 @@ script:
 - ls -la ~/ | grep jdk || true
 - ls -la /opt | grep jdk || true
 - cat /.job-board-register.yml
+- cat /.packer-env/*
