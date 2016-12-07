@@ -1,5 +1,6 @@
 language: java
 sudo: required
+group: deprecated
 # jdk: oraclejdk7
 script:
 - echo "${PATH}" | tr ':' '\n'
