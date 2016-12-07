@@ -11,3 +11,4 @@ script:
 - type jdk_switcher | head -1
 - ls -la ~/ | grep jdk || true
 - ls -la /opt | grep jdk || true
+- cat /.job-board-register.yml
