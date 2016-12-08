@@ -97,12 +97,6 @@ matrix:
     env: STACK=ruby GROUP=deprecated
 
 install:
-- curl -sSL -o /var/tmp/dump-dpkg-manifest
-  'https://raw.githubusercontent.com/travis-ci/packer-templates/meat-dpkg-info-dump/packer-scripts/dump-dpkg-manifest'
-- chmod +x /var/tmp/dump-dpkg-manifest
+- echo nah
 script:
-- dpkg --get-selections | awk '{ print $1 }'
-- dpkg --get-selections | awk '{ print $1 }' | ./dpkg-query-json
-- DPKG_MANIFEST_JSON=/var/tmp/.dpkg-manifest.json /var/tmp/dump-dpkg-manifest
-- time ./dump-bin-shas
 - time sudo find / -type f -print0 | xargs -n 50 -0 sudo sha256sum | sort -k2 | uniq
