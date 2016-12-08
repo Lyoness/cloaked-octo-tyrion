@@ -100,4 +100,4 @@ install:
 - curl -sSL -o /var/tmp/dump-dpkg-manifest
   'https://raw.githubusercontent.com/travis-ci/packer-templates/meat-dpkg-info-dump/packer-scripts/dump-dpkg-manifest'
 - chmod +x /var/tmp/dump-dpkg-manifest
-script: /var/tmp/dump-dpkg-manifest
+script: DPKG_MANIFEST_JSON=/var/tmp/.dpkg-manifest.json /var/tmp/dump-dpkg-manifest
