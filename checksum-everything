@@ -3,9 +3,9 @@ set -o errexit
 
 main() {
   : "${BASEDIR:=/}"
-  __union \
+  __intersection \
     <(__checksum_everything "${BASEDIR}") \
-    <(__checksum_everything "${BASEDIR}") \
+    <(sleep 10 && __checksum_everything "${BASEDIR}") \
     | sort -k 2
 }
 
@@ -19,20 +19,8 @@ __checksum_everything() {
     | uniq
 }
 
-__union() {
-  local a="${1}"
-  local b="${2}"
-  python <<EOPYTHON
-import sys
-lines_a = open('${a}').read().splitlines()
-lines_b = open('${b}').read().splitlines()
-sys.stdout.write(
-  '\\n'.join(
-    list(set(lines_a).union(set(lines_b)))
-  )
-)
-sys.stdout.write('\\n')
-EOPYTHON
+__intersection() {
+  ./lines-intersection "${1}" "${2}"
 }
 
 main "$@"
