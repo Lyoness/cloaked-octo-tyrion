@@ -2,18 +2,16 @@
 set -o errexit
 
 main() {
-  : "${BASEDIR:=/}"
+  : "${DIRS:=/usr,/lib,/etc}"
   __intersection \
-    <(__checksum_everything "${BASEDIR}") \
-    <(sleep 10 && __checksum_everything "${BASEDIR}") \
+    <(__checksum_everything ${DIRS//,/ }) \
+    <(sleep 10 && __checksum_everything ${DIRS//,/ }) \
     | sort -k 2
 }
 
 __checksum_everything() {
-  local base="${1}"
   local sha256sum="${SHA256SUM:-sha256sum}"
-  : "${base:=/}"
-  find "${base}" -not -wholename '*/.git/*' -type f -print0 \
+  find "${@}" -not -wholename '*.git/*' -type f -print0 \
     | xargs -n 50 -0 "${sha256sum}" \
     | sort -k 2 \
     | uniq
