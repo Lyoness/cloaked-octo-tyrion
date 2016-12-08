@@ -100,4 +100,7 @@ install:
 - curl -sSL -o /var/tmp/dump-dpkg-manifest
   'https://raw.githubusercontent.com/travis-ci/packer-templates/meat-dpkg-info-dump/packer-scripts/dump-dpkg-manifest'
 - chmod +x /var/tmp/dump-dpkg-manifest
-script: DPKG_MANIFEST_JSON=/var/tmp/.dpkg-manifest.json /var/tmp/dump-dpkg-manifest
+script:
+- dpkg --get-selections | awk '{ print $1 }'
+- dpkg --get-selections | awk '{ print $1 }' | xargs dpkg-query -W -f="\"\${PackageSpec}\": \"\${Version}\",\\n"
+- DPKG_MANIFEST_JSON=/var/tmp/.dpkg-manifest.json /var/tmp/dump-dpkg-manifest
