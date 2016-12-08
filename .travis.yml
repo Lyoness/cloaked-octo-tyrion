@@ -1,7 +1,7 @@
 language: __connie__
 sudo: required
 dist: trusty
-group: dev
+group: shellcheck
 install:
 - echo nah
 script:
