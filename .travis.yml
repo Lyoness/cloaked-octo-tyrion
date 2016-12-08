@@ -100,5 +100,5 @@ install:
 - echo nah
 script:
 - __dots() { while true; do echo -n .; sleep 5; done }; __dots &
-- time sudo ./checksum-everything | bzip2 >SHA256SUMS.bz2
-- base64 <SHA256SUMS.bz2
+- time sudo ./checksum-everything >SHA256SUMS
+- cat SHA256SUMS | bzip2 | base64

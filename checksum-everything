@@ -2,7 +2,7 @@
 set -o errexit
 
 main() {
-  : "${DIRS:=/usr,/lib,/etc}"
+  : "${DIRS:=/home,/usr,/lib,/etc}"
   __intersection \
     <(__checksum_everything ${DIRS//,/ }) \
     <(sleep 10 && __checksum_everything ${DIRS//,/ }) \
