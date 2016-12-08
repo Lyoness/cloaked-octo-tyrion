@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -o errexit
+
+main() {
+  : "${BASEDIR:=/}"
+  __union \
+    <(__checksum_everything "${BASEDIR}") \
+    <(__checksum_everything "${BASEDIR}") \
+    | sort -k 2
+}
+
+__checksum_everything() {
+  local base="${1}"
+  local sha256sum="${SHA256SUM:-sha256sum}"
+  : "${base:=/}"
+  find "${base}" -not -wholename '*/.git/*' -type f -print0 \
+    | xargs -n 50 -0 "${sha256sum}" \
+    | sort -k 2 \
+    | uniq
+}
+
+__union() {
+  local a="${1}"
+  local b="${2}"
+  python <<EOPYTHON
+import sys
+lines_a = open('${a}').read().splitlines()
+lines_b = open('${b}').read().splitlines()
+sys.stdout.write(
+  '\\n'.join(
+    list(set(lines_a).union(set(lines_b)))
+  )
+)
+sys.stdout.write('\\n')
+EOPYTHON
+}
+
+main "$@"

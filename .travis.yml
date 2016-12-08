@@ -99,4 +99,4 @@ matrix:
 install:
 - echo nah
 script:
-- time sudo find / -type f -print0 | xargs -n 50 -0 sudo sha256sum | sort -k2 | uniq
+- time sudo ./checksum-everything
