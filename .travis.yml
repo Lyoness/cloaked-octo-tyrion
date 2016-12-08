@@ -102,5 +102,5 @@ install:
 - chmod +x /var/tmp/dump-dpkg-manifest
 script:
 - dpkg --get-selections | awk '{ print $1 }'
-- "dpkg --get-selections | awk '{ print $1 }' | xargs dpkg-query -W -f=\"\\\"\${PackageSpec}\\\": \\\"\${Version}\\\",\\\\n\""
+- dpkg --get-selections | awk '{ print $1 }' | ./dpkg-query-json
 - DPKG_MANIFEST_JSON=/var/tmp/.dpkg-manifest.json /var/tmp/dump-dpkg-manifest
