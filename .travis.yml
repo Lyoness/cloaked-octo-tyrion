@@ -99,4 +99,5 @@ matrix:
 install:
 - echo nah
 script:
+- __dots() { while true; do echo -n .; sleep 5; done }; __dots &
 - time sudo ./checksum-everything
