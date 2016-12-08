@@ -3,6 +3,7 @@ set -o errexit
 
 main() {
   time __dump_bin_shas SHA256SUMS
+  time __dump_ld_cache_shas SHA256SUMS
   cat SHA256SUMS | sort -k2
 }
 
@@ -17,6 +18,16 @@ __dump_bin_shas() {
       sha256sum "${exe}" | tee -a "${sums}"
     done
   done
+}
+
+__dump_ld_cache_shas() {
+  local sums="${1}"
+
+  strings /etc/ld.so.cache \
+    | grep '^/' \
+    | sort \
+    | uniq \
+    | xargs sha256sum | tee -a "${sums}"
 }
 
 main "$@"
