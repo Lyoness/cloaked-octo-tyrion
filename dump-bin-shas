@@ -1,9 +1,22 @@
 #!/usr/bin/env bash
-for path_dir in ${PATH//:/ }; do
-  for exe in "${path_dir}/"*; do
-    if [[ ! -f "${exe}" ]]; then
-      continue
-    fi
-    sha256sum "${exe}"
+set -o errexit
+
+main() {
+  time __dump_bin_shas SHA256SUMS
+  cat SHA256SUMS | sort -k2
+}
+
+__dump_bin_shas() {
+  local sums="${1}"
+
+  for path_dir in ${PATH//:/ }; do
+    for exe in "${path_dir}/"*; do
+      if [[ ! -f "${exe}" ]]; then
+        continue
+      fi
+      sha256sum "${exe}" | tee -a "${sums}"
+    done
   done
-done
+}
+
+main "$@"
