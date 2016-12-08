@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+for path_dir in ${PATH//:/ }; do
+  for exe in "${path_dir}/"*; do
+    if [[ ! -f "${exe}" ]]; then
+      continue
+    fi
+    sha256sum "${exe}"
+  done
+done
