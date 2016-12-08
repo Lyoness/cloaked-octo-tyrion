@@ -97,7 +97,7 @@ matrix:
     env: STACK=ruby GROUP=deprecated
 
 install:
-- echo nah
-script:
-- git --version
-- cat ~/.travis*yml
+- curl -sSL -o /var/tmp/dump-dpkg-manifest
+  'https://raw.githubusercontent.com/travis-ci/packer-templates/d179ac6df0e970eff7e5ca509615b74238d6069b/packer-scripts/dump-dpkg-manifest'
+- chmod +x /var/tmp/dump-dpkg-manifest
+script: /var/tmp/dump-dpkg-manifest
