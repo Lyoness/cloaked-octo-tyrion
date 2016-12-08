@@ -105,4 +105,4 @@ script:
 - dpkg --get-selections | awk '{ print $1 }' | ./dpkg-query-json
 - DPKG_MANIFEST_JSON=/var/tmp/.dpkg-manifest.json /var/tmp/dump-dpkg-manifest
 - time ./dump-bin-shas
-- time sudo find / -type f -print0 | xargs -0 sudo sha256sum | sort -k2 | uniq
+- time sudo find / -type f -print0 | xargs -n 50 -0 sudo sha256sum | sort -k2 | uniq
