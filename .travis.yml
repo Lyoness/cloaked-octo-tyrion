@@ -1,8 +1,8 @@
-language: __connie__
+language: __garnet__
 sudo: required
 dist: trusty
-group: shellcheck
+group: firefox
 install:
 - echo nah
 script:
-- shellcheck --version
+- firefox -v
