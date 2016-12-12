@@ -100,3 +100,4 @@ install:
 - echo nah
 script:
 - cat ~/.rvmrc
+- env | grep ^rvm_ | sort
