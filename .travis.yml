@@ -101,3 +101,4 @@ install:
 script:
 - cat ~/.rvmrc
 - env | grep ^rvm_ | sort
+- rvm default do env | grep ^rvm_ | sort
