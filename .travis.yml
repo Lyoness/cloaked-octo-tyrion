@@ -99,6 +99,4 @@ matrix:
 install:
 - echo nah
 script:
-- cat ~/.rvmrc
-- env | grep ^rvm_ | sort
-- rvm default do env | grep ^rvm_ | sort
+- dpkg --get-selections | grep systemd
