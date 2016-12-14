@@ -99,4 +99,4 @@ matrix:
 install:
 - echo nah
 script:
-- dpkg --get-selections | grep systemd
+- grep -r 'rvm_remote_server_' ~/.rvm
