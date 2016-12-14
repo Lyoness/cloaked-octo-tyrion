@@ -100,4 +100,4 @@ install:
 - echo nah
 script:
 - grep -r 'rvm_remote_server_' ~/.rvm ~/.rvmrc
-- set -o xtrace ; rvm install 2.2.6 --binary --fuzzy
+- rvm_debug_flag=1 rvm install 2.2.6 --binary --fuzzy
