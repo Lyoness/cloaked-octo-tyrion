@@ -100,3 +100,4 @@ install:
 - echo nah
 script:
 - dpkg-query --version
+- man dpkg-query | grep -q PackageSpec || echo nah
