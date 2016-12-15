@@ -97,7 +97,7 @@ matrix:
     env: STACK=ruby GROUP=deprecated
 
 install:
-- curl -sSLO https://raw.githubusercontent.com/travis-ci/packer-templates/49c23c4f59c193c7a88b2d838847b3ecf94c46ed/packer-scripts/dump-dpkg-manifest
+- curl -sSLO https://raw.githubusercontent.com/travis-ci/packer-templates/7f5aef09a65fcdfcf89945f0af99be993c7d8d57/packer-scripts/dump-dpkg-manifest
 - chmod +x dump-dpkg-manifest
 script:
 - sudo ./dump-dpkg-manifest
