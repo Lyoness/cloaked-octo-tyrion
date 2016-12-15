@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -o errexit
+
+main() {
+  : "${DPKG_MANIFEST_JSON:=/.dpkg-manifest.json}"
+  set -o xtrace
+  (
+    echo '{'
+    dpkg --get-selections \
+      | awk '/\sinstall$/ { print $1 }' \
+      | xargs dpkg-query -W -f="\"\${binary:Package}\": \"\${Version}\",\\n"
+    echo "\"__timestamp\": \"$(date +%Y%m%dT%H%M%S)\"}"
+  ) | python -m json.tool \
+    | tee "${DPKG_MANIFEST_JSON}"
+}
+
+main "$@"
