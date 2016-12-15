@@ -99,4 +99,4 @@ matrix:
 install:
 - echo nah
 script:
-- sudo ./dump-dpkg-manifest
+- dpkg-query --version
