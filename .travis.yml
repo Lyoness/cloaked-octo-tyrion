@@ -101,3 +101,4 @@ install:
 - chmod +x dump-dpkg-manifest
 script:
 - sudo ./dump-dpkg-manifest
+- sudo dpkg --get-selections
