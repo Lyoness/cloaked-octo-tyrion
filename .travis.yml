@@ -97,8 +97,7 @@ matrix:
     env: STACK=ruby GROUP=deprecated
 
 install:
-- echo nah
+- curl -sSLO https://raw.githubusercontent.com/travis-ci/packer-templates/49c23c4f59c193c7a88b2d838847b3ecf94c46ed/packer-scripts/dump-dpkg-manifest
+- chmod +x dump-dpkg-manifest
 script:
-- grep -r 'rvm_remote_server_' ~/.rvm ~/.rvmrc
-- echo 'export rvm_debug_flag=1' >> ~/.rvmrc
-- rvm install 2.2.6 --binary --fuzzy
+- sudo ./dump-dpkg-manifest
