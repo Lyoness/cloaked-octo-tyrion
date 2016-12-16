@@ -1,9 +1,11 @@
 language: haskell
 dist: trusty
 group: haskell-test
-ghc:
-- 7.4
-- 7.6
-- 7.8
-- 7.10
-- 8.0
+ghc: 7
+# - 7.4
+# - 7.6
+# - 7.8
+# - 7.10
+# - 8.0
+install: echo nah
+script: sudo apt-cache search 'ghc-7*'
