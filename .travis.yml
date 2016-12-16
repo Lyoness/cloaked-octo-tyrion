@@ -8,4 +8,4 @@ ghc: 7
 # - 7.10
 # - 8.0
 install: echo nah
-script: sudo apt-cache search 'ghc-7*'
+script: sudo apt-cache search --names-only '^ghc-7.*'
