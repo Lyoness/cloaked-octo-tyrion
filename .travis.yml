@@ -99,5 +99,5 @@ matrix:
 install:
 - echo nah
 script:
-- dpkg-query --version
+- dpkg-query --help
 - man dpkg-query | grep -q PackageSpec || echo nah
