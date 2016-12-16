@@ -9,4 +9,4 @@ ghc: 7
 # - 8.0
 install: echo nah
 script:
-- sudo apt-cache search --names-only '^ghc-7.*'
+- sudo apt-cache search --names-only '^ghc-7.*' | awk '{ print $1 }' | sort | tail -1
