@@ -5,6 +5,8 @@ addons:
     - ca-certificates
     - curl
     - dnsutils
+    sources:
+    - debian-sid
 matrix:
   include:
   - sudo: false
