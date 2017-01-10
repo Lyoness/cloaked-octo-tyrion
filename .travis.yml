@@ -1,10 +1,4 @@
 language: go
-addons:
-  apt:
-    packages:
-    - curl
-    sources:
-    - debian-sid
 matrix:
   include:
   - sudo: false
