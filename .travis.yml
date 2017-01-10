@@ -21,17 +21,21 @@ matrix:
     env: INFRA=gce DIST=precise
   - sudo: false
     dist: trusty
-    env: INFRA=ec2 DIST=trusty OPTS=-3
+    env: INFRA=ec2 DIST=trusty CURL=1
   - sudo: required
     dist: trusty
-    env: INFRA=gce DIST=trusty OPTS=-3
+    env: INFRA=gce DIST=trusty CURL=1
   - sudo: false
     dist: precise
-    env: INFRA=ec2 DIST=precise OPTS=-3
+    env: INFRA=ec2 DIST=precise CURL=1
   - sudo: required
     dist: precise
-    env: INFRA=gce DIST=precise OPTS=-3
+    env: INFRA=gce DIST=precise CURL=1
 script:
 - dig releases.hashicorp.com
 - openssl s_client -connect releases.hashicorp.com:443 </dev/null || true
-- curl --connect-timeout 5 $OPTS -vvvv -sSL -O https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip
+- if [[ $CURL ]]; then
+    curl --connect-timeout 5 -vvvv -sSL -O https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip;
+  else
+    wget --no-check-certificates -v --secure-protocol=TLSv1 https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip;
+  fi
