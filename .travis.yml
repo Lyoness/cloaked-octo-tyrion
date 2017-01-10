@@ -2,8 +2,9 @@ language: go
 addons:
   apt:
     packages:
-    - dnsutils
     - ca-certificates
+    - curl
+    - dnsutils
 matrix:
   include:
   - sudo: false
