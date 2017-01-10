@@ -2,9 +2,7 @@ language: go
 addons:
   apt:
     packages:
-    - ca-certificates
     - curl
-    - dnsutils
     sources:
     - debian-sid
 matrix:
