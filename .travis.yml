@@ -13,5 +13,17 @@ matrix:
   - sudo: required
     dist: precise
     env: INFRA=gce DIST=precise
+  - sudo: false
+    dist: trusty
+    env: INFRA=ec2 DIST=trusty S=s
+  - sudo: required
+    dist: trusty
+    env: INFRA=gce DIST=trusty S=s
+  - sudo: false
+    dist: precise
+    env: INFRA=ec2 DIST=precise S=s
+  - sudo: required
+    dist: precise
+    env: INFRA=gce DIST=precise S=s
 script:
-- curl --connect-timeout 5 -vvvv -sSL -O https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip
+- curl --connect-timeout 5 -vvvv -sSL -O http$S://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip
