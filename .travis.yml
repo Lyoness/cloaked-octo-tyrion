@@ -26,7 +26,6 @@ matrix:
     dist: precise
     env: INFRA=gce DIST=precise CURL=1
 script:
-- dig releases.hashicorp.com
 - openssl s_client -connect releases.hashicorp.com:443 </dev/null || true
 - if [[ $CURL ]]; then
     curl --connect-timeout 5 -vvvv -sSL -O https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip;
