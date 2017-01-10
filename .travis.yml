@@ -1,4 +1,5 @@
-language: go
+language: python
+python: 3
 matrix:
   include:
   - sudo: false
@@ -14,4 +15,5 @@ matrix:
     dist: precise
     env: INFRA=gce DIST=precise
 script:
-- curl --connect-timeout 5 -vvvv -sSL -O https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip
+- python -c "import urllib.request;urllib.request.urlretrieve('https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip','packer_0.12.1_linux_amd64.zip')"
+- unzip packer_0.12.1_linux_amd64.zip
