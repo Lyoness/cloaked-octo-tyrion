@@ -12,4 +12,4 @@ matrix:
 script:
 - dig releases.hashicorp.com
 - ping -c 5 releases.hashicorp.com
-- curl -vvvv -sSL -O https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip
+- curl --connect-timeout 5 -vvvv -sSL -O https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip
