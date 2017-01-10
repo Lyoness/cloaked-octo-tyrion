@@ -3,13 +3,21 @@ addons:
   apt:
     packages:
     - dnsutils
+    - ca-certificates
 matrix:
   include:
   - sudo: false
-    env: WUT=ec2
+    dist: trusty
+    env: INFRA=ec2 DIST=trusty
   - sudo: required
-    env: WUT=gce
+    dist: trusty
+    env: INFRA=gce DIST=trusty
+  - sudo: false
+    dist: precise
+    env: INFRA=ec2 DIST=precise
+  - sudo: required
+    dist: precise
+    env: INFRA=gce DIST=precise
 script:
 - dig releases.hashicorp.com
-- ping -c 5 releases.hashicorp.com
 - curl --connect-timeout 5 -vvvv -sSL -O https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip
