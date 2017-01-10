@@ -15,5 +15,5 @@ matrix:
     dist: precise
     env: INFRA=gce DIST=precise
 script:
-- python3 ./download.py 'https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip' 'packer.zip'
+- ./download-tlsv12 'https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip' 'packer.zip'
 - if [[ -f packer.zip ]]; then unzip packer.zip; fi
