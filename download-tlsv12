@@ -12,10 +12,10 @@ def main(sysargs=sys.argv[:]):
     dest = sysargs[2]
     print('---> {} => {}'.format(url, dest))
 
-    with open(sys.argv[2], 'wb') as out:
+    with open(dest, 'wb') as out:
         result = out.write(
             urllib.request.urlopen(
-                sys.argv[1],
+                url,
                 context=ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
             ).read()
         )
