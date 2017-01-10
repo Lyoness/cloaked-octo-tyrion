@@ -23,16 +23,16 @@ matrix:
     env: INFRA=gce DIST=precise
   - sudo: false
     dist: trusty
-    env: INFRA=ec2 DIST=trusty OPTS=--tlsv1.2
+    env: INFRA=ec2 DIST=trusty OPTS=-3
   - sudo: required
     dist: trusty
-    env: INFRA=gce DIST=trusty OPTS=--tlsv1.2
+    env: INFRA=gce DIST=trusty OPTS=-3
   - sudo: false
     dist: precise
-    env: INFRA=ec2 DIST=precise OPTS=--tlsv1.2
+    env: INFRA=ec2 DIST=precise OPTS=-3
   - sudo: required
     dist: precise
-    env: INFRA=gce DIST=precise OPTS=--tlsv1.2
+    env: INFRA=gce DIST=precise OPTS=-3
 script:
 - dig releases.hashicorp.com
 - openssl s_client -connect releases.hashicorp.com:443 </dev/null || true
