@@ -33,5 +33,5 @@ matrix:
     env: INFRA=gce DIST=precise OPTS=-ssl3
 script:
 - dig releases.hashicorp.com
-- openssl s_client -connect releases.hashicorp.com:443
+- openssl s_client -connect releases.hashicorp.com:443 </dev/null
 - curl --connect-timeout 5 $OPTS -vvvv -sSL -O https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip
