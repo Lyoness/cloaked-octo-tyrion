@@ -1,7 +1,7 @@
 language: ruby
 rvm: jruby
 dist: trusty
-sudo: required
+sudo: false
 install: echo hai
 script:
 - ruby --version
