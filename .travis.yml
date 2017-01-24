@@ -1,4 +1,5 @@
-language: go
+language: ruby
+ruby: 2.4
 matrix:
   include:
   - dist: trusty
@@ -9,4 +10,5 @@ matrix:
     sudo: required
   - dist: precise
     sudo: false
-script: jq --version
+install: echo install
+script: ruby -v
