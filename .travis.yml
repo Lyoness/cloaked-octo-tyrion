@@ -1,9 +1,7 @@
-language: node_js
-node_js: 4.0
+language: ruby
+rvm: jruby
 dist: precise
 sudo: required
 install: echo hai
 script:
-- which yarn || true
-- yarn --version || true
-- git --version
+- ruby --version
