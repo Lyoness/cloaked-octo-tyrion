@@ -1,6 +1,6 @@
 language: ruby
 rvm: jruby
-dist: precise
+dist: trusty
 sudo: required
 install: echo hai
 script:
