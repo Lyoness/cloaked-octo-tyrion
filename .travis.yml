@@ -1,5 +1,5 @@
 language: ruby
-ruby: 2.4
+rvm: 2.4
 matrix:
   include:
   - dist: trusty
