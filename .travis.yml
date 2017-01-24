@@ -1,3 +1,12 @@
 language: go
-sudo: false
-script: stat -c %Y /etc/hosts
+matrix:
+  include:
+  - dist: trusty
+    sudo: required
+  - dist: trusty
+    sudo: false
+  - dist: precise
+    sudo: required
+  - dist: precise
+    sudo: false
+script: jq --version
