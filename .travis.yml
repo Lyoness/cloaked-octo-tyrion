@@ -3,10 +3,16 @@ matrix:
   include:
   - dist: trusty
     sudo: required
+    group: maven-test
+    env: Q=maven-test,sudo
   - dist: trusty
     sudo: false
-  - dist: precise
+    group: maven-test
+    env: Q=maven-test,nosudo
+  - dist: trusty
     sudo: required
-  - dist: precise
+    env: Q=stable,sudo
+  - dist: trusty
     sudo: false
+    env: Q=stable,nosudo
 script: mvn -version
