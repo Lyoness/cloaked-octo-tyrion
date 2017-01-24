@@ -9,4 +9,4 @@ matrix:
     sudo: required
   - dist: precise
     sudo: false
-script: jq --version
+script: mvn -version
