@@ -99,5 +99,6 @@ matrix:
 install:
 - echo nah
 script:
-- dpkg-query --help
-- man dpkg-query | grep -q PackageSpec || echo nah
+- curl -sSLO 'https://raw.githubusercontent.com/travis-ci/packer-templates/master/packer-scripts/dump-dpkg-manifest'
+- chmod +x dump-dpkg-manifest
+- sudo ./dump-dpkg-manifest
