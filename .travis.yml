@@ -3,16 +3,11 @@ matrix:
   include:
   - dist: trusty
     sudo: required
-    group: maven-test
-    env: Q=maven-test,sudo
-  - dist: trusty
-    sudo: false
-    group: maven-test
-    env: Q=maven-test,nosudo
+    group: rebar3-test
+    env: Q=rebar3-test,sudo
   - dist: trusty
     sudo: required
     env: Q=stable,sudo
-  - dist: trusty
-    sudo: false
-    env: Q=stable,nosudo
-script: mvn -version
+script:
+- rebar version || true
+- rebar3 version || true
