@@ -1,4 +1,4 @@
-language: go
+language: __amethyst__
 matrix:
   include:
   - dist: trusty
