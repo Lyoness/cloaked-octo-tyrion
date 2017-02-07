@@ -53,10 +53,10 @@ matrix:
     dist: precise
     group: edge
     env: STACK=haskell GROUP=edge
-  - language: jvm
+  - language: java
     dist: precise
     env: STACK=jvm GROUP=stable
-  - language: jvm
+  - language: java
     dist: precise
     group: edge
     env: STACK=jvm GROUP=edge
