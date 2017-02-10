@@ -20,6 +20,6 @@ install:
 - git clone --branch=meat-precise-container-updates https://github.com/travis-ci/packer-templates.git
 script:
 - cd packer-templates/dockerfiles/travisci/travis-${STACK}
-- docker build -t travisci/travis-${STACK}:2017Q1 .
-- cd ../../../
-- DOCKER_DEST=travisci/travis-${STACK}:2017Q1 ./bin/docker-push
+- docker build -t travisci/travis-${STACK}:2017Q1 . &&
+  cd ../../../ &&
+  DOCKER_DEST=travisci/travis-${STACK}:2017Q1 ./bin/docker-push
