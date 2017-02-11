@@ -97,5 +97,5 @@ matrix:
     env: STACK=ruby GROUP=edge
 
 script:
-- for e in /.packer-env/*; do echo -n "${e}: "; cat "${e}"; done
+- 'for e in /.packer-env/*; do echo -n "${e}: "; cat "${e}"; done'
 - env | grep ^TRAVIS_STACK
