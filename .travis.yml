@@ -97,6 +97,7 @@ matrix:
     env: STACK=ruby GROUP=edge
 
 install:
+- sudo find /etc/apt -name '*rwky*'
 - sudo apt-get update -yqq
 - sudo apt-cache search redis
 script:
