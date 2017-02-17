@@ -99,7 +99,7 @@ env: STACK=sugilite GROUP=stable
 install:
 - sudo find /etc/apt -name '*rwky*'
 - sudo sed -i 's,rwky/redis,rwky/ppa,g' /etc/apt/sources.list.d/rwky-redis.list
-- sudo apt-get update -yqq
+- sudo apt-get update
 - sudo apt-cache search redis
 script:
 - echo nah
