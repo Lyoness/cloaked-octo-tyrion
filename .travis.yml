@@ -5,99 +5,100 @@ dist: trusty
 group: stable
 env: STACK=sugilite GROUP=stable
 
-matrix:
-  include:
-  - language: __sugilite__
-    dist: trusty
-    group: edge
-    env: STACK=sugilite GROUP=edge
-  - language: __connie__
-    dist: trusty
-    env: STACK=connie GROUP=stable
-  - language: __connie__
-    dist: trusty
-    group: edge
-    env: STACK=connie GROUP=edge
-  - language: __amethyst__
-    dist: trusty
-    env: STACK=amethyst GROUP=stable
-  - language: __amethyst__
-    dist: trusty
-    group: edge
-    env: STACK=amethyst GROUP=edge
-  - language: __garnet__
-    dist: trusty
-    env: STACK=garnet GROUP=stable
-  - language: __garnet__
-    dist: trusty
-    group: edge
-    env: STACK=garnet GROUP=edge
-  - language: android
-    dist: precise
-    env: STACK=android GROUP=stable
-  - language: android
-    dist: precise
-    group: edge
-    env: STACK=android GROUP=edge
-  - language: erlang
-    dist: precise
-    env: STACK=erlang GROUP=stable
-  - language: go
-    dist: precise
-    group: edge
-    env: STACK=go GROUP=edge
-  - language: haskell
-    dist: precise
-    env: STACK=haskell GROUP=stable
-  - language: haskell
-    dist: precise
-    group: edge
-    env: STACK=haskell GROUP=edge
-  - language: java
-    dist: precise
-    env: STACK=jvm GROUP=stable
-  - language: java
-    dist: precise
-    group: edge
-    env: STACK=jvm GROUP=edge
-  - language: nodejs
-    dist: precise
-    env: STACK=nodejs GROUP=stable
-  - language: nodejs
-    dist: precise
-    group: edge
-    env: STACK=nodejs GROUP=edge
-  - language: perl
-    dist: precise
-    env: STACK=perl GROUP=stable
-  - language: perl
-    dist: precise
-    group: edge
-    env: STACK=perl GROUP=edge
-  - language: php
-    dist: precise
-    env: STACK=php GROUP=stable
-  - language: php
-    dist: precise
-    group: edge
-    env: STACK=php GROUP=edge
-  - language: python
-    dist: precise
-    env: STACK=python GROUP=stable
-  - language: python
-    dist: precise
-    group: edge
-    env: STACK=python GROUP=edge
-  - language: ruby
-    dist: precise
-    env: STACK=ruby GROUP=stable
-  - language: ruby
-    dist: precise
-    group: edge
-    env: STACK=ruby GROUP=edge
+# matrix:
+#   include:
+#   - language: __sugilite__
+#     dist: trusty
+#     group: edge
+#     env: STACK=sugilite GROUP=edge
+#   - language: __connie__
+#     dist: trusty
+#     env: STACK=connie GROUP=stable
+#   - language: __connie__
+#     dist: trusty
+#     group: edge
+#     env: STACK=connie GROUP=edge
+#   - language: __amethyst__
+#     dist: trusty
+#     env: STACK=amethyst GROUP=stable
+#   - language: __amethyst__
+#     dist: trusty
+#     group: edge
+#     env: STACK=amethyst GROUP=edge
+#   - language: __garnet__
+#     dist: trusty
+#     env: STACK=garnet GROUP=stable
+#   - language: __garnet__
+#     dist: trusty
+#     group: edge
+#     env: STACK=garnet GROUP=edge
+#   - language: android
+#     dist: precise
+#     env: STACK=android GROUP=stable
+#   - language: android
+#     dist: precise
+#     group: edge
+#     env: STACK=android GROUP=edge
+#   - language: erlang
+#     dist: precise
+#     env: STACK=erlang GROUP=stable
+#   - language: go
+#     dist: precise
+#     group: edge
+#     env: STACK=go GROUP=edge
+#   - language: haskell
+#     dist: precise
+#     env: STACK=haskell GROUP=stable
+#   - language: haskell
+#     dist: precise
+#     group: edge
+#     env: STACK=haskell GROUP=edge
+#   - language: java
+#     dist: precise
+#     env: STACK=jvm GROUP=stable
+#   - language: java
+#     dist: precise
+#     group: edge
+#     env: STACK=jvm GROUP=edge
+#   - language: nodejs
+#     dist: precise
+#     env: STACK=nodejs GROUP=stable
+#   - language: nodejs
+#     dist: precise
+#     group: edge
+#     env: STACK=nodejs GROUP=edge
+#   - language: perl
+#     dist: precise
+#     env: STACK=perl GROUP=stable
+#   - language: perl
+#     dist: precise
+#     group: edge
+#     env: STACK=perl GROUP=edge
+#   - language: php
+#     dist: precise
+#     env: STACK=php GROUP=stable
+#   - language: php
+#     dist: precise
+#     group: edge
+#     env: STACK=php GROUP=edge
+#   - language: python
+#     dist: precise
+#     env: STACK=python GROUP=stable
+#   - language: python
+#     dist: precise
+#     group: edge
+#     env: STACK=python GROUP=edge
+#   - language: ruby
+#     dist: precise
+#     env: STACK=ruby GROUP=stable
+#   - language: ruby
+#     dist: precise
+#     group: edge
+#     env: STACK=ruby GROUP=edge
 
 install:
 - sudo find /etc/apt -name '*rwky*'
+- sudo sed -i 's,rwky/redis,rwky/ppa,g' /etc/apt/sources.list.d/rwky-redis.list
 - sudo apt-get update -yqq
 - sudo apt-cache search redis
 script:
