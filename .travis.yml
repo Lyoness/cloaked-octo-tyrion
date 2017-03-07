@@ -7,7 +7,7 @@ dist: trusty
 group: stable
 env: STACK=sugilite GROUP=stable
 services:
-- mysql
+- mysqld
 
 addons:
   firefox: 5.0.1
