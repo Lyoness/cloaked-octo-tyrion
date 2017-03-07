@@ -27,5 +27,6 @@ matrix:
 
 install: echo nah
 script:
-- sudo find /var -name mysqld
-- sudo find /var -name mysqld.sock
+- which mysql
+- mysql --version
+- echo 'SHOW VARIABLES LIKE "%version%"' | mysql
