@@ -1,22 +1,8 @@
 language: ruby
+sudo: false
+dist: trusty
 
 rvm: 2.3.1
-
-sudo: required
-dist: trusty
-group: stable
-env: STACK=sugilite GROUP=stable
-
-matrix:
-  include:
-  - language: __sugilite__
-    dist: trusty
-    group: edge
-    env: STACK=sugilite GROUP=edge
-  - language: __sugilite__
-    dist: trusty
-    group: deprecated
-    env: STACK=sugilite GROUP=deprecated
 
 cache:
   bundler: true
