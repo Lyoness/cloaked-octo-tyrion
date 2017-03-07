@@ -32,3 +32,4 @@ script:
 - which mysql
 - mysql --version
 - echo 'SHOW VARIABLES LIKE "%version%"' | mysql
+- sudo find /var/log -name '*mysql*' -exec tail -1000 {} \;
