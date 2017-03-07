@@ -6,6 +6,8 @@ sudo: required
 dist: trusty
 group: stable
 env: STACK=sugilite GROUP=stable
+services:
+- mysql
 
 addons:
   firefox: 5.0.1
