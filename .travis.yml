@@ -1,11 +1,17 @@
-language: ruby
-sudo: false
-dist: trusty
-
-rvm: 2.3.1
-
-cache:
-  bundler: true
-
-install: bundle install
-script: echo boops
+language: node_js
+node_js: 6.10.0
+sudo: required
+dist: precise
+jdk: java-8-openjdk
+addons:
+  apt:
+    packages:
+    - oracle-java8-installer
+    - oracle-java8-set-default
+install: echo nope
+script:
+- source ~/.jdk_switcher_rc
+- jdk_switcher use java-8-oracle
+- java -version
+- javac Huh.java
+- java Huh
