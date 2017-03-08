@@ -8,9 +8,10 @@ addons:
     packages:
     - oracle-java8-installer
     - oracle-java8-set-default
-install: echo nope
+install:
+- curl -sSL -o /var/tmp/jdk_switcher.sh 'https://raw.githubusercontent.com/michaelklishin/jdk_switcher/master/jdk_switcher.sh'
 script:
-- source ~/.jdk_switcher_rc || source /opt/jdk_switcher/jdk_switcher.sh
+- source /var/tmp/jdk_switcher.sh
 - jdk_switcher use java-8-oracle
 - java -version
 - javac Huh.java
