@@ -4,4 +4,5 @@ sudo: false
 
 install: echo install
 
-script: env | grep ^TRAVIS
+script:
+- curl -svvvvLi "https://api.github.com/user?access_token=${GITHUB_TOKEN}" 2>&1 | grep -v access_token
