@@ -1,8 +1,9 @@
 language: generic
-
 sudo: false
-
+env:
+  global:
+  - secure: dfZvx93TihHrJuqmRKC2jR9buhYC8M4jTmXAvPS4Wtnca9sCF9+acs/a9qe+bav/rS9MQyJNzOGiZAb6LHGTeUMmXsNJI0MMqlY0MG2lWy3NpVL7X3oHCm7SteKjk+2937DlEH/qf9gGKpd/DyKUGOVy6Izaut32iHcdAuCW/Ow=
 install: echo install
-
 script:
 - curl -svvvvLi "https://api.github.com/user?access_token=${GITHUB_TOKEN}" 2>&1 | grep -v access_token
+- grep -c "${GITHUB_TOKEN2}" ~/build.sh
