@@ -1,7 +1,6 @@
-language: generic
-
+language: python
 sudo: false
-
-install: echo install
-
-script: env | grep ^TRAVIS
+python:
+- pypy3.3-5.5-alpha
+install: python --version
+script: python -c 'import math;print(math.pi)'
