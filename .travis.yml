@@ -1,7 +1,19 @@
-language: generic
+language: java
+dist: trusty
+sudo: required
+jdk: oraclejdk8
 
-sudo: false
+install:
+# - mkdir -p ~/.nvm
+# - curl -sS -o ~/.nvm/nvm.sh https://build.travis-ci.org/files/nvm.sh
+# - curl -sS -o ~/.nvm/nvm-exec https://build.travis-ci.org/files/nvm-exec
+# - source ~/.nvm/nvm.sh && nvm install lts
+- nvm install lts
 
-install: echo install
-
-script: env | grep ^TRAVIS
+script:
+- npm install bower grunt
+- export PATH="$PWD/node_modules/.bin:$PATH"
+- which bower
+- bower --help
+- which grunt
+- grunt --help
