@@ -3,7 +3,7 @@ sudo: required
 dist: trusty
 group: stable
 addons:
-  mariadb: 10.2.4
+  mariadb: 10.1.21
 install: echo uhm
 script:
 - echo 'SHOW VARIABLES LIKE "%version"' | mysql
