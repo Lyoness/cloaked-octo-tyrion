@@ -3,6 +3,27 @@ node_js: 7
 sudo: false
 dist: precise
 group: stable
+env:
+- JOB=01
+- JOB=02
+- JOB=03
+- JOB=04
+- JOB=05
+- JOB=06
+- JOB=07
+- JOB=08
+- JOB=09
+- JOB=10
+- JOB=11
+- JOB=12
+- JOB=13
+- JOB=14
+- JOB=15
+- JOB=16
+- JOB=17
+- JOB=18
+- JOB=19
+- JOB=20
 install:
 - echo nah
 script:
