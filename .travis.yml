@@ -1,9 +1,11 @@
 language: node_js
+node_js: 7
 sudo: false
-dist: trusty
+dist: precise
 group: stable
 install:
 - echo nah
 script:
-- dpkg-query --version
-- man dpkg-query | grep -q PackageSpec || echo nah
+- uptime
+- curl -vvvv -SLO https://nodejs.org/dist/v7.7.3/node-v7.7.3-linux-x64.tar.xz
+- file node-v7*
