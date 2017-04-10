@@ -1,7 +1,5 @@
-language: generic
-
+language: php
 sudo: false
-
-install: echo install
-
-script: env | grep ^TRAVIS
+php: hhvm
+install: skip
+script: echo hay
