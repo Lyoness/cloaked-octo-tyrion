@@ -1,7 +1,7 @@
-language: generic
+language: ruby
 
-sudo: false
+os: osx
 
 install: echo install
 
-script: env | grep ^TRAVIS
+script: curl -sfLvvvv 'https://api.nuget.org/v3/index.json'
