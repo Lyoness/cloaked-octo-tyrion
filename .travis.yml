@@ -1,3 +1,5 @@
 language: go
+dist: trusty
 sudo: false
-script: rvm @global do gem install faraday bundler rake
+install: echo gee
+script: echo willikers
