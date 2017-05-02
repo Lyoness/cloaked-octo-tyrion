@@ -8,7 +8,7 @@ before_script:
 - sudo locale-gen --no-archive sv_SE.UTF-8
 - sudo /etc/init.d/postgresql stop
 - sudo rm -rf /var/lib/postgresql/9.6/main
-- sudo find /var/lib/postgresql/ -name initdb
+- sudo find /etc/postgresql/ -name initdb
 - sudo -u postgres -- /var/lib/postgresql/9.6/bin/initdb --locale=sv_SE.UTF-8 -D /var/lib/postgresql/9.6/main || echo nah
 - sudo /etc/init.d/postgresql start 9.6
 - psql -c 'create database travis_ci_test;' -U postgres
