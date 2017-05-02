@@ -5,8 +5,10 @@ before_script:
 - sudo apt-get update
 - sudo apt-get install language-pack-sv
 - sudo locale-gen --no-archive sv_SE.UTF-8
+- sudo /etc/init.d/postgresql stop 9.6
 - sudo apt-get remove postgresql-9.6
 - sudo apt-get purge postgresql-9.6
+- sudo rm -rf /var/lib/postgresql/9.6/main /etc/postgresql/9.6/main
 - sudo apt-get install postgresql-9.6
 # - sudo /etc/init.d/postgresql stop
 # - sudo rm -rf /etc/postgresql/9.6/main
