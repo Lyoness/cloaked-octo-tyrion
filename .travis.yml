@@ -1,5 +1,14 @@
-language: go
-dist: precise
-sudo: false
-install: echo gee
-script: echo willikers
+sudo: required
+dist: trusty
+language: ruby
+rvm: 2.3.3
+before_script:
+- sudo apt-get update
+- sudo apt-get install language-pack-sv
+- sudo locale-gen --no-archive sv_SE.UTF-8
+- sudo /etc/init.d/postgresql stop
+- sudo /etc/init.d/postgresql start 9.6
+- psql -c 'create database travis_ci_test;' -U postgres
+script:
+- psql travis_ci_test <schema.sql
+- psql travis_ci_test <alter.sql
