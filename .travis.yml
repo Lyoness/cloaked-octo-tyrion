@@ -1,15 +1,15 @@
 sudo: required
 dist: trusty
 language: ruby
-rvm: 2.3.3
 before_script:
 - sudo apt-get update
 - sudo apt-get install language-pack-sv
 - sudo locale-gen --no-archive sv_SE.UTF-8
 - sudo /etc/init.d/postgresql stop
 - sudo rm -rf /etc/postgresql/9.6/main
-- sudo -u postgres HOME=/var/lib/postgresql -- /usr/lib/postgresql/9.6/bin/initdb --locale=sv_SE.UTF-8 -D /etc/postgresql/9.6/main || echo nah
-- sudo /etc/init.d/postgresql start 9.6
+- sudo -u postgres bash -cl '/usr/lib/postgresql/9.6/bin/initdb --locale=sv_SE.UTF-8 -D /etc/postgresql/9.6/main' || echo nah
+- sudo -u postgres bash -cl '/usr/lib/postgresql/9.6/bin/pg_ctl -D /etc/postgresql/9.6/main -l /var/tmp/postgresql.log start' &
+- sleep 10
 - psql -c 'create database travis_ci_test;' -U postgres
 script:
 - psql travis_ci_test -a -f schema.sql
