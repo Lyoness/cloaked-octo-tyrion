@@ -1,7 +1,12 @@
 language: generic
 
+dist: trusty
 sudo: false
+
+apt:
+  packages:
+  - libsdl2-2.0
 
 install: echo install
 
-script: env | grep ^TRAVIS
+script: echo wat
