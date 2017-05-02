@@ -10,9 +10,9 @@ before_script:
 - sudo /etc/init.d/postgresql start 9.6
 - psql -c 'create database travis_ci_test;' -U postgres
 script:
-- psql travis_ci_test <schema.sql
-- psql travis_ci_test <alter.sql
-- psql travis_ci_test <inspect.sql
-- psql travis_ci_test <create_collation.sql
-- psql travis_ci_test <alter.sql
-- psql travis_ci_test <inspect.sql
+- psql travis_ci_test -a -f schema.sql
+- psql travis_ci_test -a -f alter.sql
+- psql travis_ci_test -a -f inspect.sql
+- psql travis_ci_test -a -f create_collation.sql
+- psql travis_ci_test -a -f alter.sql
+- psql travis_ci_test -a -f inspect.sql
