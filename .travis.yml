@@ -1,7 +1,10 @@
-language: generic
+language: bash
 
 sudo: false
 
+git:
+  lfs_skip_smudge: true
+
 install: echo install
 
-script: env | grep ^TRAVIS
+script: echo hay
