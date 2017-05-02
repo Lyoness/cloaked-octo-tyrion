@@ -7,10 +7,11 @@ before_script:
 - sudo locale-gen --no-archive sv_SE.UTF-8
 - sudo /etc/init.d/postgresql stop
 - sudo rm -rf /etc/postgresql/9.6/main
-- sudo -u postgres bash -cl '/usr/lib/postgresql/9.6/bin/initdb --locale=sv_SE.UTF-8 -D /etc/postgresql/9.6/main' || echo nah
-- sudo -u postgres bash -cl '/usr/lib/postgresql/9.6/bin/pg_ctl -D /etc/postgresql/9.6/main -l /var/tmp/postgresql.log start' &
+- sudo -u postgres HOME=/var/lib/postgresql bash -cl '/usr/lib/postgresql/9.6/bin/initdb --locale=sv_SE.UTF-8 -D /etc/postgresql/9.6/main' || echo nah
+- sudo -u postgres HOME=/var/lib/postgresql bash -cl '/usr/lib/postgresql/9.6/bin/pg_ctl -D /etc/postgresql/9.6/main -l /var/tmp/postgresql.log start' &
 - sleep 10
-- psql -c 'create database travis_ci_test;' -U postgres
+- sudo -u postgres HOME=/var/lib/postgresql bash -cl '/usr/lib/postgresql/9.6/bin/createuser -s -l travis'
+- sudo -u postgres HOME=/var/lib/postgresql bash -cl '/usr/lib/postgresql/9.6/bin/createdb -O travis travis_ci_test'
 script:
 - psql travis_ci_test -a -f schema.sql
 - psql travis_ci_test -a -f alter.sql
