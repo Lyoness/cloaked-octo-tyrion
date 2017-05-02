@@ -12,3 +12,7 @@ before_script:
 script:
 - psql travis_ci_test <schema.sql
 - psql travis_ci_test <alter.sql
+- psql travis_ci_test <inspect.sql
+- psql travis_ci_test <create_collation.sql
+- psql travis_ci_test <alter.sql
+- psql travis_ci_test <inspect.sql
