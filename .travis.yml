@@ -9,91 +9,91 @@ matrix:
   include:
   # - language: __sugilite__
   #   dist: trusty
-  #   group: edge
+  #   group: deprecated-2017Q1
   #   env: STACK=sugilite GROUP=deprecated-2017Q1
   # - language: __connie__
   #   dist: trusty
   #   env: STACK=connie GROUP=stable
   # - language: __connie__
   #   dist: trusty
-  #   group: edge
+  #   group: deprecated-2017Q1
   #   env: STACK=connie GROUP=deprecated-2017Q1
   # - language: __amethyst__
   #   dist: trusty
   #   env: STACK=amethyst GROUP=stable
   # - language: __amethyst__
   #   dist: trusty
-  #   group: edge
+  #   group: deprecated-2017Q1
   #   env: STACK=amethyst GROUP=deprecated-2017Q1
   # - language: __garnet__
   #   dist: trusty
   #   env: STACK=garnet GROUP=stable
   # - language: __garnet__
   #   dist: trusty
-  #   group: edge
+  #   group: deprecated-2017Q1
   #   env: STACK=garnet GROUP=deprecated-2017Q1
-  - language: android
-    dist: precise
-    env: STACK=android GROUP=stable
-  - language: android
-    dist: precise
-    group: edge
-    env: STACK=android GROUP=deprecated-2017Q1
   - language: erlang
     dist: precise
     env: STACK=erlang GROUP=stable
+  - language: erlang
+    dist: precise
+    group: deprecated-2017Q1
+    env: STACK=erlang GROUP=deprecated-2017Q1
   - language: go
     dist: precise
-    group: edge
+    env: STACK=go GROUP=stable
+  - language: go
+    dist: precise
+    group: deprecated-2017Q1
     env: STACK=go GROUP=deprecated-2017Q1
   - language: haskell
     dist: precise
     env: STACK=haskell GROUP=stable
   - language: haskell
     dist: precise
-    group: edge
+    group: deprecated-2017Q1
     env: STACK=haskell GROUP=deprecated-2017Q1
   - language: java
     dist: precise
     env: STACK=jvm GROUP=stable
   - language: java
     dist: precise
-    group: edge
+    group: deprecated-2017Q1
     env: STACK=jvm GROUP=deprecated-2017Q1
   - language: nodejs
     dist: precise
     env: STACK=nodejs GROUP=stable
   - language: nodejs
     dist: precise
-    group: edge
+    group: deprecated-2017Q1
     env: STACK=nodejs GROUP=deprecated-2017Q1
   - language: perl
     dist: precise
     env: STACK=perl GROUP=stable
   - language: perl
     dist: precise
-    group: edge
+    group: deprecated-2017Q1
     env: STACK=perl GROUP=deprecated-2017Q1
   - language: php
     dist: precise
     env: STACK=php GROUP=stable
   - language: php
     dist: precise
-    group: edge
+    group: deprecated-2017Q1
     env: STACK=php GROUP=deprecated-2017Q1
   - language: python
     dist: precise
     env: STACK=python GROUP=stable
   - language: python
     dist: precise
-    group: edge
+    group: deprecated-2017Q1
     env: STACK=python GROUP=deprecated-2017Q1
   - language: ruby
     dist: precise
     env: STACK=ruby GROUP=stable
   - language: ruby
     dist: precise
-    group: edge
+    group: deprecated-2017Q1
     env: STACK=ruby GROUP=deprecated-2017Q1
 
 install: echo uhm
