@@ -1,7 +1,9 @@
-language: generic
-
-sudo: false
+language: ruby
+dist: precise
+sudo: required
 
 install: echo install
 
-script: env | grep ^TRAVIS
+script:
+- curl -sSLO "http://ppa.launchpad.net/limparissoft/opencv-ppa/ubuntu/pool/main/o/opencv/opencv_2.4.5-0~3~precise1_amd64.deb"
+- sudo dpkg -i "opencv_2.4.5-0~3~precise1_amd64.deb"
