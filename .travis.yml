@@ -60,13 +60,13 @@ matrix:
     dist: precise
     group: deprecated-2017Q1
     env: STACK=jvm GROUP=deprecated-2017Q1
-  - language: nodejs
+  - language: node_js
     dist: precise
-    env: STACK=nodejs GROUP=stable
-  - language: nodejs
+    env: STACK=node_js GROUP=stable
+  - language: node_js
     dist: precise
     group: deprecated-2017Q1
-    env: STACK=nodejs GROUP=deprecated-2017Q1
+    env: STACK=node_js GROUP=deprecated-2017Q1
   - language: perl
     dist: precise
     env: STACK=perl GROUP=stable
