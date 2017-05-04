@@ -7,95 +7,96 @@ env: STACK=sugilite GROUP=stable
 
 matrix:
   include:
-  - language: __sugilite__
-    dist: trusty
-    group: edge
-    env: STACK=sugilite GROUP=edge
-  - language: __connie__
-    dist: trusty
-    env: STACK=connie GROUP=stable
-  - language: __connie__
-    dist: trusty
-    group: edge
-    env: STACK=connie GROUP=edge
-  - language: __amethyst__
-    dist: trusty
-    env: STACK=amethyst GROUP=stable
-  - language: __amethyst__
-    dist: trusty
-    group: edge
-    env: STACK=amethyst GROUP=edge
-  - language: __garnet__
-    dist: trusty
-    env: STACK=garnet GROUP=stable
-  - language: __garnet__
-    dist: trusty
-    group: edge
-    env: STACK=garnet GROUP=edge
+  # - language: __sugilite__
+  #   dist: trusty
+  #   group: edge
+  #   env: STACK=sugilite GROUP=deprecated-2017Q1
+  # - language: __connie__
+  #   dist: trusty
+  #   env: STACK=connie GROUP=stable
+  # - language: __connie__
+  #   dist: trusty
+  #   group: edge
+  #   env: STACK=connie GROUP=deprecated-2017Q1
+  # - language: __amethyst__
+  #   dist: trusty
+  #   env: STACK=amethyst GROUP=stable
+  # - language: __amethyst__
+  #   dist: trusty
+  #   group: edge
+  #   env: STACK=amethyst GROUP=deprecated-2017Q1
+  # - language: __garnet__
+  #   dist: trusty
+  #   env: STACK=garnet GROUP=stable
+  # - language: __garnet__
+  #   dist: trusty
+  #   group: edge
+  #   env: STACK=garnet GROUP=deprecated-2017Q1
   - language: android
     dist: precise
     env: STACK=android GROUP=stable
   - language: android
     dist: precise
     group: edge
-    env: STACK=android GROUP=edge
+    env: STACK=android GROUP=deprecated-2017Q1
   - language: erlang
     dist: precise
     env: STACK=erlang GROUP=stable
   - language: go
     dist: precise
     group: edge
-    env: STACK=go GROUP=edge
+    env: STACK=go GROUP=deprecated-2017Q1
   - language: haskell
     dist: precise
     env: STACK=haskell GROUP=stable
   - language: haskell
     dist: precise
     group: edge
-    env: STACK=haskell GROUP=edge
+    env: STACK=haskell GROUP=deprecated-2017Q1
   - language: java
     dist: precise
     env: STACK=jvm GROUP=stable
   - language: java
     dist: precise
     group: edge
-    env: STACK=jvm GROUP=edge
+    env: STACK=jvm GROUP=deprecated-2017Q1
   - language: nodejs
     dist: precise
     env: STACK=nodejs GROUP=stable
   - language: nodejs
     dist: precise
     group: edge
-    env: STACK=nodejs GROUP=edge
+    env: STACK=nodejs GROUP=deprecated-2017Q1
   - language: perl
     dist: precise
     env: STACK=perl GROUP=stable
   - language: perl
     dist: precise
     group: edge
-    env: STACK=perl GROUP=edge
+    env: STACK=perl GROUP=deprecated-2017Q1
   - language: php
     dist: precise
     env: STACK=php GROUP=stable
   - language: php
     dist: precise
     group: edge
-    env: STACK=php GROUP=edge
+    env: STACK=php GROUP=deprecated-2017Q1
   - language: python
     dist: precise
     env: STACK=python GROUP=stable
   - language: python
     dist: precise
     group: edge
-    env: STACK=python GROUP=edge
+    env: STACK=python GROUP=deprecated-2017Q1
   - language: ruby
     dist: precise
     env: STACK=ruby GROUP=stable
   - language: ruby
     dist: precise
     group: edge
-    env: STACK=ruby GROUP=edge
+    env: STACK=ruby GROUP=deprecated-2017Q1
 
 install: echo uhm
 script:
-- sudo docker version || true
+- cat /.job-board-register.yml
+- for f in /.packer-env/*; do echo "---> ${f}"; cat $f; done
