@@ -1,5 +1,5 @@
-language: go
-dist: precise
+language: python
+dist: trusty
 sudo: false
 install: echo gee
 script: echo willikers
