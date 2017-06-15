@@ -3,3 +3,14 @@ dist: trusty
 sudo: false
 install: echo gee
 script: echo willikers
+env:
+- N=00
+- N=01
+- N=02
+- N=03
+- N=04
+- N=05
+- N=06
+- N=07
+- N=08
+- N=09
