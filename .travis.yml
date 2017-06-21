@@ -1,7 +1,18 @@
-language: generic
-
-sudo: false
-
-install: echo install
-
-script: env | grep ^TRAVIS
+language: __connie__
+sudo: required
+dist: trusty
+group: stable
+script:
+- curl -sSLO https://raw.githubusercontent.com/travis-ci/packer-templates/master/packer-scripts/dump-dpkg-manifest
+- chmod +x dump-dpkg-manifest
+- sudo ./dump-dpkg-manifest | tee dpkg-manifest.json
+matrix:
+  include:
+  - language: __garnet__
+    env: STACK=garnet
+  - language: __amethyst__
+    env: STACK=amethyst
+  - language: __sugilite__
+    env: STACK=sugilite
+  - language: __connie__
+    env: STACK=connie
